@@ -1,12 +1,9 @@
-import dotenv from 'dotenv' 
-
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom"; 
 import Login from './Views/Login'
 import UserProfile from './Views/UserProfile'
 import Welcome from './Views/Welcome'
-dotenv.config() 
-console.log('CONFIG', process.env.CONFIG) 
+console.log('CONFIG', process.env.REACT_APP_FIREBASE_CONFIG) 
 
 function App() {
   return (
