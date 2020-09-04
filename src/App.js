@@ -1,10 +1,12 @@
+import dotenv from 'dotenv' 
+
 import React from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom"; 
 import Login from './Views/Login'
 import UserProfile from './Views/UserProfile'
 import Welcome from './Views/Welcome'
-
-console.log('config', process.env.config) 
+dotenv.config() 
+console.log('CONFIG', process.env.CONFIG) 
 
 function App() {
   return (
