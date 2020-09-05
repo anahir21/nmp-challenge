@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import dotenv from 'dotenv' 
-// import { loadReCaptcha } from 'react-recaptcha-v3'
+import { loadReCaptcha } from 'react-recaptcha-v3'
 import Login from './Views/Login'
 import UserProfile from './Views/UserProfile'
 import Welcome from './Views/Welcome'
@@ -13,7 +13,7 @@ console.log('api', process.env.REACT_APP_BREAKINGBAD)
 
 function App() {
   useEffect(() => {
-    // loadReCaptcha(your_site_key);
+    loadReCaptcha('6Ldv-McZAAAAAByOnBc5o78RN1Z8FEjDndNVjscA');
   }, [])
   return (
     <BrowserRouter>

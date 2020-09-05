@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import ReCaptcha from '../Components/ReCaptcha';
+import ReCaptcha from '../Components/ReCaptcha';
 import axios from 'axios';
 
 const Welcome = () => {
@@ -21,10 +21,10 @@ const Welcome = () => {
   return (
     <div>
         Welcome to our app 
-        {/* <ReCaptcha
-          sitekey="your_site_key"
-          action='action_name'
-        /> */}
+        <ReCaptcha
+          sitekey="6Ldv-McZAAAAAByOnBc5o78RN1Z8FEjDndNVjscA"
+          
+        />
       {data.map((item) => { 
         return<p> nombre: {item.name} </p>
         })}
