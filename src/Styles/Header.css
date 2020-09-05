@@ -1,0 +1,38 @@
+/* No CSS *//*# sourceMappingURL=Header.css.map */
+.empty {
+  background-color: yellow;
+}
+.header-container {
+  display: grid;
+  grid-template-rows: 105px 55px;
+}
+.header {
+  background-color: yellow;
+  display: grid;
+  grid-template-columns: 28% 5% 67%;
+}
+.nav-bar {
+  background-color: #A02431;
+}
+.nmp-img {
+  height: 5rem;
+}
+ul {
+  list-style: none;
+}
+.nav-bar > li {
+  float: left;
+}
+.nav-bar li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.wrapper-img {
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+.wrapper-inf {
+  background-color: palevioletred;
+}
