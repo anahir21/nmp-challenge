@@ -26,7 +26,7 @@ const Welcome = () => {
           action='action_name'
         /> */}
       {data.map((item) => { 
-        return<p> {item.name}</p>
+        return<p> nombre: {item.name} </p>
         })}
     </div>
   )
