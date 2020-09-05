@@ -10,8 +10,19 @@ const Header = () => {
         <div className="wrapper-img">
           <img alt="nmp-img" src={nmp} className="nmp-img"/>
         </div>
-        <div className="empty"></div>
-        <div className="wrapper-inf"></div>
+        <div></div>
+        <div className="wrapper-inf">
+          <div className="aa"></div>
+          <div className="about-we">
+            <p></p>
+            <p><a>CONÓCENOS</a></p>
+            <p><a>INVERSIÓN SOCIAL</a></p>
+            <p><a>TALENTO MONTE</a></p>
+            <p><a>INSTITUTO DE VALUADORES</a></p>
+            <p><a>SALA DE PRENSA</a></p>
+            <p></p>
+          </div>
+        </div>
       </div>
       <nav className="nav-bar">
         <div></div>
@@ -22,8 +33,8 @@ const Header = () => {
           <li><a>AVALÚO</a></li>
           <li><a>DIRECTORIO <br/> DE SERVICIOS</a></li>
           <li><a>SUCURSALES</a></li>
-          <li><a>BLOG</a></li>
-          <li><a>REGISTRO</a></li>
+          <li><a className="a-blog">BLOG</a></li>
+          <li ><a className="a-register">REGISTRO</a></li>
         </ul>
       </nav>
     </div>

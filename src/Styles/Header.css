@@ -1,6 +1,21 @@
-/* No CSS *//*# sourceMappingURL=Header.css.map */
-.empty {
-  background-color: #ffffff;
+.a-register {
+  background-color: #531B58;
+  font-weight: bold;
+  height: 30px;
+}
+
+.a-register:hover {
+  background-color: #FCB415;
+  color: #531B58;
+}
+
+.a-blog {
+  background-color: #FCB415;
+  height: 30px;
+}
+
+.a-blog:hover {
+  color: #98002E;
 }
 
 .header-container {
@@ -9,18 +24,18 @@
 }
 
 .header {
-  background-color: yellow;
   display: grid;
   grid-template-columns: 28% 5% 67%;
 }
 
 .nav-bar {
-  background-color: #A02431;
   display: grid;
   grid-template-columns: 11% 89%;
+  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: linear-gradient(-90deg, #C9003C, #C9003C, #98002E);
 }
-
-
 
 .nmp-img {
   height: 5rem;
@@ -40,10 +55,16 @@ ul {
   font-family: 'Roboto Condensed', sans-serif;
   padding: 12px 16px;
   font-size: 13px;
-  min-height: 54px;
   position: relative;
   display: grid;
   justify-items: center;
+}
+
+.nav-bar li a:hover {
+  background-color: #FCB415;
+  cursor: pointer;
+  height: 30px;
+  color: #98002E;
 }
 
 .wrapper-img {
@@ -54,5 +75,21 @@ ul {
 }
 
 .wrapper-inf {
-  background-color: palevioletred;
+  display: grid;
+  grid-template-rows: 50% 50%;
+}
+
+.aa {
+  background-color: aqua;
+}
+
+.about-we {
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 25% 9% 12% 11% 17% 10% 10%;
+  font-family: 'Roboto Condensed', sans-serif, Arial, Helvetica;
+  font-size: 13px;
+  color: #354C58;
 }
