@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.login-container {
+  border: 1px solid black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login-container .login-form-container {
+  border: 1px solid black;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.login-container img {
+  width: 344px;
+  margin-bottom: 60px;
+}
+
+.login-container div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-container label {
+  margin-top: 16px;
+}
+
+.login-container input[type="text"], .login-container input[type="password"] {
+  width: 450px;
+  height: 50px;
+  border-style: none;
+  border-radius: 10px;
+  border: 1px solid #C4C4C4;
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+.login-container input[type="button"] {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 48px;
+  width: 350px;
+  height: 50px;
+  border-style: none;
+  border: 1px solid #C4C4C4;
+  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+}
+/*# sourceMappingURL=login.css.map */

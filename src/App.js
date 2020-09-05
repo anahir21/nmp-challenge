@@ -8,7 +8,7 @@ import Welcome from './Views/Welcome'
 //dotenv.config() 
 //require('dotenv').config();
 
-console.log(process.env.ALGO) 
+console.log(process.env.REACT_APP_FIREBASE_CONFIG) 
 
 function App() {
   return (
