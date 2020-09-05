@@ -1,38 +1,58 @@
 /* No CSS *//*# sourceMappingURL=Header.css.map */
 .empty {
-  background-color: yellow;
+  background-color: #ffffff;
 }
+
 .header-container {
   display: grid;
   grid-template-rows: 105px 55px;
 }
+
 .header {
   background-color: yellow;
   display: grid;
   grid-template-columns: 28% 5% 67%;
 }
+
 .nav-bar {
   background-color: #A02431;
+  display: grid;
+  grid-template-columns: 11% 89%;
 }
+
+
+
 .nmp-img {
   height: 5rem;
 }
+
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.nav-bar > li {
-  float: left;
-}
+
 .nav-bar li a {
   color: #ffffff;
   text-decoration: none;
+  display: inline;
+  float: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 12px 16px;
+  font-size: 13px;
+  min-height: 54px;
+  position: relative;
+  display: grid;
+  justify-items: center;
 }
+
 .wrapper-img {
   background-color: #ffffff;
   display: grid;
   justify-items: center;
   align-items: center;
 }
+
 .wrapper-inf {
   background-color: palevioletred;
 }

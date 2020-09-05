@@ -17,7 +17,6 @@ const Welcome = () => {
   return (
     <div>
       <Header />
-        Welcome to our app 
         {/* <ReCaptcha
           sitekey="your_site_key"
           action='action_name'

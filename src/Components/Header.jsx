@@ -14,15 +14,16 @@ const Header = () => {
         <div className="wrapper-inf"></div>
       </div>
       <nav className="nav-bar">
+        <div></div>
         <ul>
-          <li><a>EMPEÑO DE JOYAS, RELOJES Y VARIOS</a></li>
-          <li>AUTOAVANZA</li>
-          <li>INFORMACIÓN DE PAGOS</li>
-          <li>AVALÚO</li>
-          <li>DIRECTORIO DE SERVICIOS</li>
-          <li>SUCURSALES</li>
-          <li>BLOG</li>
-          <li>REGISTRO</li>
+          <li><a>EMPEÑO DE JOYAS, <br/> RELOJES Y VARIOS</a></li>
+          <li id="one-word"><a>AUTOAVANZA</a></li>
+          <li className="two-words"><a>INFORMACIÓN <br/> DE PAGOS</a></li>
+          <li><a>AVALÚO</a></li>
+          <li><a>DIRECTORIO <br/> DE SERVICIOS</a></li>
+          <li><a>SUCURSALES</a></li>
+          <li><a>BLOG</a></li>
+          <li><a>REGISTRO</a></li>
         </ul>
       </nav>
     </div>
