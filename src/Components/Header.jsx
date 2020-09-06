@@ -42,16 +42,16 @@ const Header = () => {
             <div>
               <a
                 href="https://www.facebook.com/nacionalmontedepiedad"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 <AiFillFacebook className="icon-react icon-fb" />
               </a>
-              <a href="https://twitter.com/nmontepiedad" target="_blank">
+              <a href="https://twitter.com/nmontepiedad" target="_blank" rel="noopener noreferrer">
                 <AiOutlineTwitter className="icon-react icon-twitter" />
               </a>
               <a
                 href="https://www.youtube.com/c/nacionalmontedepiedad"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 <AiFillYoutube className="icon-react icon-u2" />
               </a>
@@ -88,7 +88,7 @@ const Header = () => {
             <p>
               <a
                 href="https://inversionsocial.montepiedad.com.mx/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 INVERSIÓN SOCIAL
               </a>
@@ -116,15 +116,15 @@ const Header = () => {
         <div></div>
         <ul>
           <li>
-            <a>
+            <a href="# ">
               EMPEÑO DE JOYAS, <br /> RELOJES Y VARIOS
             </a>
           </li>
           <li id="one-word">
-            <a>AUTOAVANZA</a>
+            <a href="# ">AUTOAVANZA</a>
           </li>
           <li className="two-words">
-            <a>
+            <a href="# ">
               INFORMACIÓN <br /> DE PAGOS
             </a>
           </li>
@@ -147,7 +147,7 @@ const Header = () => {
             </a>
           </li>
           <li>
-            <a className="a-register">REGISTRO</a>
+            <a href="# " className="a-register">REGISTRO</a>
           </li>
         </ul>
       </nav>

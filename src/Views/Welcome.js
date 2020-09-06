@@ -18,13 +18,10 @@ const Welcome = () => {
   }, [])
   console.log('data', data);
 
-  return ( <
-    div >
-    <
-    Header / >
-
-    <
-    /div>
+  return ( 
+    <div >
+      <Header />
+    </div>
   )
 }
 
