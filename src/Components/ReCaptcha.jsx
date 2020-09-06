@@ -1,36 +1,53 @@
 import React, { Component } from 'react';
-import { ReCaptcha } from 'react-recaptcha-v3';
+import Recaptcha from 'react-recaptcha';
 
-class Recaptcha extends Component {
-  verifyCallback = (recaptchaToken) => {
-    // Here you will get the final recaptchaToken!!!  
-    console.log(recaptchaToken, "<= your recaptcha token")
+class ReCaptchaComponent extends Component {
+  constructor(props) {
+    super(props)
+
+    this.handleSubscribe = this.handleSubscribe.bind(this);
+    this.recaptchaLoaded = this.recaptchaLoaded.bind(this);
+    this.verifyCallback = this.verifyCallback.bind(this);
+
+    this.state = {
+      isVerified: false
+    }
   }
 
-  updateToken = () => {
-    // you will get a new token in verifyCallback
-    this.recaptcha.execute();
+  recaptchaLoaded() {
+    console.log('capcha successfully loaded');
   }
+
+  handleSubscribe() {
+    if (this.state.isVerified) {
+      alert('You have successfully subscribed!');
+    } else {
+      alert('Please verify that you are a human!');
+    }
+  }
+
+  verifyCallback(response) {
+    if (response) {
+      this.setState({
+        isVerified: true
+      })
+    }
+  }
+
   render() {
     return (
       <div>
-
-        <ReCaptcha
-            ref={ref => this.recaptcha = ref}
-            sitekey="your_site_key"
-            action='action_name'
+        <div>
+          <Recaptcha
+            sitekey="6LfIW8gZAAAAAAgBswhFHkciGTkVgrRcCPXjLQOv"
+            render="explicit"
+            onloadCallback={this.recaptchaLoaded}
             verifyCallback={this.verifyCallback}
-        />
-
-        <h2>Google ReCaptcha with React </h2>
-
-        <code>
-          1. Add <strong>your site key</strong> in the ReCaptcha component. <br/>
-          2. Check <strong>console</strong> to see the token.
-        </code>
+          />
+        </div>
       </div>
     );
-  };
+  }
 }
 
-export default Recaptcha;
+export default ReCaptchaComponent;
