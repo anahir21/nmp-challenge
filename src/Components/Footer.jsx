@@ -5,11 +5,26 @@ const Footer = () => {
   return (
     <div className="footer">
       <div className="schedule">
-        <div>a</div>
-        <div>b</div>
-        <div>c</div>
+        <div></div>
+        <div className="info-schedule">
+          <p className="p-info-schedule">
+            <span>Horarios de Atención Telefónica</span>
+          </p>
+          <strong className="p-strong">800 EL MONTE (800 35 666 83)</strong>
+        </div>
+        <div>
+          <p className="p-info-schedule">
+            <span>Horarios de Sucursales</span>
+          </p>
+        </div>
+        <div>
+          <p className="p-info-schedule">
+            <span>Horarios de Casa Matriz</span>
+          </p>
+        </div>
         <div>d</div>
         <div>e</div>
+        <div></div>
       </div>
       <div className="announcements">
         <div></div>

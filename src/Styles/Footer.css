@@ -11,7 +11,12 @@
 
 .schedule {
   display: grid;
-  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-columns: 10% 20% 20% 15% 15% 10% 10%;
+}
+
+.p-info-schedule {
+  color: #98002E;
+  font-size: 18px;
 }
 
 .announcements {
