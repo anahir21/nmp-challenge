@@ -1,6 +1,11 @@
-.form-postulation {
-  font-family: 'Roboto Condensed', sans-serif;
-  font-size: 13px;
+.btn-form {
+  font-family: "Roboto Condensed", sans-serif;
+  height: 35px;
+  border-radius: 5px;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  background-color: #c4c4c4;
+  padding: 0 15px;
 }
 
 .customer-form {
@@ -8,19 +13,14 @@
   grid-template-rows: 9% 20% 9% 20% 9% 20% 9% 20% 9% 20% 12% 15%;
 }
 
+.form-postulation {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 13px;
+}
+
 .input-date,
 .input-email,
 .input-text {
   height: 40px;
   width: 300px;
-}
-
-.btn-form {
-  font-family: 'Roboto Condensed', sans-serif;
-  height: 35px;
-  border-radius: 5px;
-  border: 0;
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: #c4c4c4;
-  padding: 0 15px;
 }
