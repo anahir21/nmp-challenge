@@ -1,7 +1,5 @@
-import React, {
-  useState,
-  useEffect
-} from 'react';
+import React, { useState, useEffect } from 'react';
+import ReCaptcha from '../Components/ReCaptcha';
 // import ReCaptcha from '../Components/ReCaptcha';
 import axios from 'axios';
 import Header from '../Components/Header';
@@ -17,7 +15,6 @@ const Welcome = () => {
     getData()
   }, [])
   console.log('data', data);
-
   return ( 
     <div >
       <Header />
