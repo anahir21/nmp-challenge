@@ -1,8 +1,44 @@
-.a-questions,
-.a-contact {
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+.about-we {
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: 25% 9% 12% 11% 17% 10% 10%;
+  font-family: 'Roboto Condensed', sans-serif, Arial, Helvetica;
+  font-size: 13px;
+  color: #354C58;
+}
+
+.a-blog {
+  background-color: #FCB415;
+  height: 30px;
+}
+
+.a-blog:hover {
+  color: #98002E;
+}
+
+.a-contact,
+.a-questions {
   color: #C9003C;
   font-family: 'Roboto Condensed', sans-serif, Arial, Helvetica;
   font-size: 14px;
+}
+
+.a-contact:hover {
+  color: #531B58
+}
+
+.a-questions:hover {
+  color: #531B58
 }
 
 .a-register {
@@ -16,129 +52,12 @@
   color: #531B58;
 }
 
-.a-blog {
-  background-color: #FCB415;
-  height: 30px;
-}
-
-.a-blog:hover {
-  color: #98002E;
-}
-
-.header-container {
-  display: grid;
-  grid-template-rows: 105px 55px;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 28% 5% 67%;
-}
-
-.nav-bar {
-  display: grid;
-  grid-template-columns: 11% 89%;
-  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
-  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
-  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
-  background: linear-gradient(-90deg, #C9003C, #C9003C, #98002E);
-}
-
-.nmp-img {
-  height: 4.5rem;
-}
-
-.img-logo-tel {
-  height: 1.5rem;
-
-}
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-bar li a {
-  color: #ffffff;
-  text-decoration: none;
-  display: inline;
-  float: left;
-  font-family: 'Roboto Condensed', sans-serif;
-  padding: 12px 16px;
-  font-size: 13px;
-  position: relative;
-  display: grid;
-  justify-items: center;
-}
-
-.nav-bar li a:hover {
-  background-color: #FCB415;
-  cursor: pointer;
-  height: 30px;
-  color: #98002E;
-}
-
-.wrapper-img {
-  background-color: #ffffff;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-}
-
-.a-questions:hover {
-  color: #531B58
-}
-
-.a-contact:hover {
-  color: #531B58
-}
-
-a {
-  text-decoration: none;
-}
-
-a:visited {
-  color: inherit;
-}
-
 a,
 .icon-react,
 .btn-monte,
 .btn-promo,
 .nmp-img:hover {
   cursor: pointer;
-}
-
-.wrapper-inf {
-  display: grid;
-  grid-template-rows: 50% 50%;
-}
-
-.aa {
-  background-color: #ffffff;
-  display: grid;
-  justify-items: center;
-  align-items: center;
-  grid-template-columns: 10% 12% 15% 8% 11% 17% 11%;
-  font-size: 13px;
-}
-
-.icon-react {
-  font-size: 1.2rem;
-  margin: 3px;
-}
-
-.icon-fb {
-  color: #0466E2;
-}
-
-.icon-twitter {
-  color: #39A2F2;
-}
-
-.icon-u2 {
-  color: #ED3833;
 }
 
 .btn-monte {
@@ -163,13 +82,94 @@ a,
   color: #ffffff;
 }
 
-.about-we {
+.header {
+  display: grid;
+  grid-template-columns: 28% 5% 67%;
+}
+
+.header-container {
+  display: grid;
+  grid-template-rows: 105px 55px;
+}
+
+.icon-fb {
+  color: #0466E2;
+}
+
+.icon-react {
+  font-size: 1.2rem;
+  margin: 3px;
+}
+
+.icon-twitter {
+  color: #39A2F2;
+}
+
+.icon-u2 {
+  color: #ED3833;
+}
+
+.img-logo-tel {
+  height: 1.5rem;
+
+}
+
+.info {
   background-color: #ffffff;
   display: grid;
   justify-items: center;
   align-items: center;
-  grid-template-columns: 25% 9% 12% 11% 17% 10% 10%;
-  font-family: 'Roboto Condensed', sans-serif, Arial, Helvetica;
+  grid-template-columns: 10% 12% 15% 8% 11% 17% 11%;
   font-size: 13px;
-  color: #354C58;
+}
+
+.nav-bar {
+  display: grid;
+  grid-template-columns: 11% 89%;
+  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: linear-gradient(-90deg, #C9003C, #C9003C, #98002E);
+}
+
+.nav-bar li a {
+  color: #ffffff;
+  text-decoration: none;
+  display: inline;
+  float: left;
+  font-family: 'Roboto Condensed', sans-serif;
+  padding: 12px 16px;
+  font-size: 13px;
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+
+.nav-bar li a:hover {
+  background-color: #FCB415;
+  cursor: pointer;
+  height: 30px;
+  color: #98002E;
+}
+
+.nmp-img {
+  height: 4.5rem;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper-img {
+  background-color: #ffffff;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.wrapper-inf {
+  display: grid;
+  grid-template-rows: 50% 50%;
 }
