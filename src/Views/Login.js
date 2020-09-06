@@ -1,14 +1,31 @@
 import React, {useState} from 'react'
 import '../Styles/login.css'
-import Logo from '../images/nmp.png' 
+import Logo from '../images/nmp.png'
+import firebase from '../Firebase/firebase'
+import 'firebase/firestore'
+import { useHistory } from "react-router-dom";
 
 const Login = () => {
-
-  const[username, setUsername] = useState('');
+  
+  const history = useHistory(); 
+  const[email, setEmail] = useState('');
   const[password, setPassword] = useState('');
 
-  function loginBtn(){
-    console.log('Hey', username, password);
+  const loginBtn = () => {
+    
+    if(email && password){
+      console.log('Hey', email, password);
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(()=>{
+        history.push('/profile')
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    }else{
+      console.log('No hay valores')
+    }
+    
   }
 
   return (
@@ -22,7 +39,7 @@ const Login = () => {
           <input type='text' 
             id='loginUser' 
             name='' 
-            onChange={(e)=>setUsername(e.target.value)}  
+            onChange={(e)=>setEmail(e.target.value)}  
           />
         </div>
         <div>

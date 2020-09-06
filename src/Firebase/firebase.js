@@ -1,15 +1,15 @@
 import firebase from 'firebase'
 
-const config = {
-    apiKey: "AIzaSyCRsfT2K4Nk2lHLc-gZPioEG1tXRdCeZgM",
-    authDomain: "nmp-rec.firebaseapp.com",
-    databaseURL: "https://nmp-rec.firebaseio.com",
-    projectId: "nmp-rec",
-    storageBucket: "nmp-rec.appspot.com",
-    messagingSenderId: "513255208066",
-    appId: "1:513255208066:web:6b16ee35de6ead4281f09b"
-  };
-  // Initialize Firebase
-  firebase.initializeApp(config);
+const firebaseConfig = {
+  apiKey: "AIzaSyCI8qFGz291cnQczBAAzWCRbCB1XBU06EM",
+  authDomain: "nmp-dev-fab.firebaseapp.com",
+  databaseURL: "https://nmp-dev-fab.firebaseio.com",
+  projectId: "nmp-dev-fab",
+  storageBucket: "nmp-dev-fab.appspot.com",
+  messagingSenderId: "398792109990",
+  appId: "1:398792109990:web:489731574b3a6944a72967"
+};
 
-  export default firebase;
+firebase.initializeApp(firebaseConfig);
+
+export default firebase;
