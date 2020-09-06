@@ -12,10 +12,41 @@ const Footer = () => {
         <div>e</div>
       </div>
       <div className="announcements">
-        <div>x</div>
-        <div>w</div>
-        <div>y</div>
-        <div>z</div>
+        <div></div>
+        <div className="announcements-a">
+          <p className="p-announcements">AVISOS Y REGULATORIO</p>
+          <p>
+            Registro público de casas de empeño <br />
+            Contratos registrados ante profeco <br /> ¿Qué es el CAT y cómo se
+            calcula? <br /> Calculadora de CAT
+          </p>
+        </div>
+        <div className="announcements-b">
+          <p className="p-announcements">EMPLEADOS Y PROVEEDORES</p>
+          <p>
+            Facturación Electrónica <br /> Acceso Empleados <br /> Acceso VPN{" "}
+            <br />
+            Recepción de Facturación
+          </p>
+        </div>
+        <div className="announcements-c">
+          <p className="p-announcements">AVISOS DE PRIVACIDAD</p>
+          <p>
+            Aviso de Privacidad <br />
+            Aviso de Privacidad Donatarias <br />
+            Aviso de Privacidad Solicitantes de Empleo <br />
+            Aviso de Privacidad Proveedores <br />
+            Derechos Arco
+          </p>
+        </div>
+        <div className="announcements-d">
+          <p className="p-announcements">USO DE REDES SOCIALES E INTERNET</p>
+          <p>
+            Condiciones de uso de Redes Sociales <br />
+            Mecanismos para deshabilitar cookies
+          </p>
+        </div>
+        <div></div>
       </div>
       <div className="wrapper-final-footer">
         <p className="address">

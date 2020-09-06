@@ -16,7 +16,29 @@
 
 .announcements {
   display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-columns: 10% 20% 20% 20% 20% 10%;
+}
+
+.announcements-a,
+.announcements-b,
+.announcements-c {
+  border-right: #909090 1px solid;
+}
+
+.announcements-a,
+.announcements-b,
+.announcements-c,
+.announcements-d {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+  padding-left: 15px;
+  margin-bottom: 5rem;
+}
+
+.p-announcements {
+  font-size: 16px;
 }
 
 .wrapper-final-footer {
