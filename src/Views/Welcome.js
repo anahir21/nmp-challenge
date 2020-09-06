@@ -1,9 +1,26 @@
-import React from 'react'
+import React, {
+  useState,
+  useEffect
+} from 'react';
+// import ReCaptcha from '../Components/ReCaptcha';
+import axios from 'axios';
+import Header from '../Components/Header';
 
 const Welcome = () => {
-  return (
-    <div>
-        Welcome to our app 
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    const getData = async () => {
+      let api = process.env.REACT_APP_BREAKINGBAD
+      const response = await axios.get(api)
+      setData(response.data)
+    }
+    getData()
+  }, [])
+  console.log('data', data);
+
+  return ( 
+    <div >
+      <Header />
     </div>
   )
 }
