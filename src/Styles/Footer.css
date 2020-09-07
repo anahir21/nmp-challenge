@@ -1,0 +1,116 @@
+.address {
+  color: #354C58;
+  font-size: 18px;
+}
+
+.a-footer {
+  color: #6997B0;
+  font-size: 14px;
+}
+
+.announcements {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 20% 20% 20% 20% 10%;
+      grid-template-columns: 10% 20% 20% 20% 20% 10%;
+}
+
+.announcements-a,
+.announcements-b,
+.announcements-c {
+  border-right: #909090 1px solid;
+}
+
+.announcements-a,
+.announcements-b,
+.announcements-c,
+.announcements-d {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  color: #333;
+  padding-left: 15px;
+  margin-bottom: 5rem;
+}
+
+.customer-service {
+  font-size: 18px;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+
+.details-schedule {
+  color: #354C58;
+  font-size: 12px;
+}
+
+.footer {
+  height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 27% 25% 45%;
+      grid-template-rows: 27% 25% 45%;
+  background-color: #E7F3F7;
+  -webkit-box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.15);
+  padding-top: 3rem;
+}
+
+.info-schedule {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.mg-top-strong {
+  padding-top: 3.3rem;
+}
+
+.p-strong {
+  color: #354C58;
+  font-size: 14px;
+}
+
+.p-info-schedule {
+  color: #98002E;
+  font-size: 18px;
+}
+
+.p-announcements {
+  font-size: 16px;
+}
+
+.regulation {
+  color: #354C58;
+  -webkit-margin-before: 1em;
+          margin-block-start: 1em;
+  -webkit-margin-after: 1em;
+          margin-block-end: 1em;
+  -webkit-margin-start: 0px;
+          margin-inline-start: 0px;
+  -webkit-margin-end: 0px;
+          margin-inline-end: 0px;
+}
+
+.rights-reserved {
+  color: #354C58;
+  font-size: 14px;
+}
+
+.schedule {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10% 20% 20% 14% 13% 10% 10%;
+      grid-template-columns: 10% 20% 20% 14% 13% 10% 10%;
+}
+
+.wrapper-final-footer {
+  text-align: center;
+}
+/*# sourceMappingURL=Footer.css.map */

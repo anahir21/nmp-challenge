@@ -9,8 +9,10 @@
 }
 
 .customer-form {
+  display: -ms-grid;
   display: grid;
-  grid-template-rows: 9% 20% 9% 20% 9% 20% 9% 20% 9% 20% 12% 15%;
+  -ms-grid-rows: 9% 20% 9% 20% 9% 20% 9% 20% 9% 20% 12% 15%;
+      grid-template-rows: 9% 20% 9% 20% 9% 20% 9% 20% 9% 20% 12% 15%;
 }
 
 .form-postulation {
@@ -24,3 +26,4 @@
   height: 40px;
   width: 300px;
 }
+/*# sourceMappingURL=Form.css.map */
