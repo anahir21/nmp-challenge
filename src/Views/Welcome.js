@@ -19,14 +19,13 @@ const Welcome = ({isLogin}) => {
 
   return (
     <div>
-      Welcome to our app 
       <Header />
-      <Form />
       <input type='button' 
         id='' 
         value='Ingresar'
         onClick={enterBtn} 
       />
+      <Form />
     </div>
   )
 }
