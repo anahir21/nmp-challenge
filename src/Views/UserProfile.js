@@ -1,6 +1,7 @@
 import React from 'react'
 import firebase from '../Firebase/firebase'
 import { useHistory } from "react-router-dom";
+import ReCaptchaComponent from '../Components/ReCaptcha';
 
 const UserProfile = () => {
   const history = useHistory(); 
@@ -22,6 +23,7 @@ const UserProfile = () => {
           value='Cerrar Sesión' 
           onClick={closeSessionBtn}
         />
+      <ReCaptchaComponent />
     </div>
   )
 }
