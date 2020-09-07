@@ -5,8 +5,6 @@ import UserProfile from './Views/UserProfile'
 import Welcome from './Views/Welcome'
 import firebase from './Firebase/firebase'
 
-console.log(process.env.REACT_APP_FIREBASE_CONFIG) 
-
 function App() {
 
   const[isLogin, setIsLogin] = useState(false)
