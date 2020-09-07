@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import '../Styles/login.css'
-import Logo from '../images/nmp.png'
+import Logo from '../Static/Images/nmp-logo.png'
 import firebase from '../Firebase/firebase'
 import 'firebase/firestore'
 import { useHistory } from "react-router-dom";
