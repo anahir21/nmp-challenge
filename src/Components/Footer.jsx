@@ -10,20 +10,31 @@ const Footer = () => {
           <p className="p-info-schedule">
             <span>Horarios de Atención Telefónica</span>
           </p>
-          <strong className="p-strong">800 EL MONTE (800 35 666 83)</strong>
+          <strong className="p-strong">800 EL MONTE (800 35 666 83)</strong>{" "}
+          <br />
+          <p className="details-schedule">
+            Lunes a Viernes de 8:00 a 20:00 <br />
+            <br /> Sábados de 8:00 a 16:00
+          </p>
         </div>
         <div>
           <p className="p-info-schedule">
             <span>Horarios de Sucursales</span>
           </p>
+          <strong className="p-strong">Atención general</strong>
         </div>
         <div>
           <p className="p-info-schedule">
             <span>Horarios de Casa Matriz</span>
           </p>
+          <strong className="p-strong">Tienda Monte</strong>
         </div>
-        <div>d</div>
-        <div>e</div>
+        <div>
+          <strong className="p-strong">Desempeño / Refrendo</strong>
+        </div>
+        <div>
+          <strong className="p-strong">Empeño</strong>
+        </div>
         <div></div>
       </div>
       <div className="announcements">
