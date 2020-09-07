@@ -22,18 +22,32 @@ const Footer = () => {
             <span>Horarios de Sucursales</span>
           </p>
           <strong className="p-strong">Atención general</strong>
+          <p className="details-schedule">
+            Lunes a viernes de 08:30 a 14:30 y 15:30 a 17:45 hrs. <br />
+            <br />
+            Sábado de 08:30 a 13:00 hrs. <br /> <br />
+            Consulta los servicios que brinda tu sucursal cercana.
+          </p>
         </div>
         <div>
           <p className="p-info-schedule">
             <span>Horarios de Casa Matriz</span>
           </p>
           <strong className="p-strong">Tienda Monte</strong>
+          <p className="details-schedule">Cerrado hasta nuevo aviso</p>
         </div>
-        <div>
+        <div className="mg-top-strong">
           <strong className="p-strong">Desempeño / Refrendo</strong>
+          <p className="details-schedule">
+            Lunes a viernes de 08:30 a 17:45 <br /> <br /> hrs.
+          </p>
         </div>
-        <div>
+        <div className="mg-top-strong">
           <strong className="p-strong">Empeño</strong>
+          <p className="details-schedule">
+            Lunes a viernes 08:30 a 17:45 <br /> <br /> hrs. <br /> <br />{" "}
+            Sábado de 08:30 a 13:00 hrs.
+          </p>
         </div>
         <div></div>
       </div>
