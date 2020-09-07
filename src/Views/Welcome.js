@@ -6,7 +6,7 @@ import Form from '../Components/Form';
 const Welcome = () => {
   
   return ( 
-    <div >
+    <div>
       <Header />
       <Form />
     </div>
