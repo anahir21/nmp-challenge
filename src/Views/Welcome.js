@@ -3,7 +3,10 @@ import firebase from '../Firebase/firebase'
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import Header from '../Components/Header';
+import SignInBtn from '../Components/SignInBtn';
 import Form from '../Components/Form';
+import OnboardingText from '../Components/OnboardingText';
+
 
 const Welcome = ({isLogin}) => {
   const history = useHistory(); 
@@ -20,11 +23,10 @@ const Welcome = ({isLogin}) => {
   return (
     <div>
       <Header />
-      <input type='button' 
-        id='' 
-        value='Ingresar'
-        onClick={enterBtn} 
+      <SignInBtn 
+        onClickFunction={enterBtn}
       />
+      <OnboardingText />
       <Form />
     </div>
   )

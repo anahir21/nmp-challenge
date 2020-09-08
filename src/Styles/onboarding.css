@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.signInBtn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 25px 0;
+}
+
+.signInBtn-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  margin-right: 14px;
+}
+
+.signInBtn-container input[type='button'] {
+  width: 113px;
+  height: 35px;
+  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border-style: none;
+  margin-right: 7.91667%;
+}
+
+.onboardingText-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.onboardingText-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  color: #891928;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.onboardingText-container .onboardingImgs-container {
+  position: relative;
+}
+
+.onboardingText-container .onboardingImgs-container .onboarding-back {
+  width: 870px;
+  height: 393px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: absolute;
+  top: 0;
+  left: 456px;
+  z-index: -1;
+}
+
+.onboardingText-container .onboardingImgs-container .onboarding-rectangle {
+  margin-left: 105px;
+  width: 408px;
+  height: 393px;
+}
+
+.onboardingText-container .onboardingImgs-container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 34px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  width: 315px;
+  margin: auto;
+  position: absolute;
+  top: 54px;
+  left: 138px;
+  text-align: center;
+}
+/*# sourceMappingURL=onboarding.css.map */

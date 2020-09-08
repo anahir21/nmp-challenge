@@ -4,54 +4,82 @@ $inputBorderColor: #C4C4C4;
 
 
 .login-container{
-  //border: 1px solid black;
+  //border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin-top: 64px;
+  background: rgb(0, 0, 0);
+  
+  .backImg{
+    width: 100%;
+    opacity: 0.75;
+    
+  }
   
   .login-form-container{
-    //border: 1px solid black;
-    align-self: center;
-  }
-
-  img{
-    width: 344px;
-    margin-bottom: 60px;
-  }
-
-  div{
-    //border: 1px solid black;
+    //border: 1px solid blue;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #DEDEDE;
+    position:absolute;
+    padding: 35px 59px;
+    
+    
+    p{
+      font-size: 36px;
+      color: #4F4F4F;
+      font-weight: 600;
+      margin: 0;
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    div{
+      //border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    label{
+      
+      font-size: 22px;
+      color: #283238;
+      margin-bottom: 20px;
+
+    }
+  
+    input[type="text"], input[type="password"]{
+      width: 450px;
+      height: 50px;
+      border-style: none;
+      border-radius: 10px;
+      border: 1px solid $inputBorderColor;
+      font-size: 22px;
+      margin-bottom: 20px;
+      
+    }
+  
+    input[type="button"]{
+      width: 450px;
+      height: 54.34px;
+      border-style: none;
+      background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+      font-size: 22px;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      margin-top: 27.63px;
+    }
+
+
+
   }
 
-  label{
-    margin-top: 16px;
-  }
-
-  input[type="text"], input[type="password"]{
-    width: 450px;
-    height: 50px;
-    border-style: none;
-    border-radius: 10px;
-    border: 1px solid $inputBorderColor;
-    font-size: 14px;
-    margin-top: 16px;
-  }
-
-  input[type="button"]{
-    align-self: center;
-    margin-top: 48px;
-    width: 350px;
-    height: 50px;
-    border-style: none;
-    border: 1px solid $inputBorderColor;
-    background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    color: white;
-  }
+  
 
 }
