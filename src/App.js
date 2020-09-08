@@ -36,12 +36,7 @@ function App() {
             </Fragment>
           :
             <Fragment>
-              <Route exact path="/" render = {() => 
-                <Welcome 
-                isLogin={isLogin} 
-                />}  
-              />    
-              <Route exact path="/login" component={Login} />        
+              <Route exact path="/" component={Login} />        
             </Fragment>
           }          
         </Switch>

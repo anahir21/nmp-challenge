@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import '../Styles/login.css'
-import Logo from '../Static/Images/nmp-logo.png'
 import firebase from '../Firebase/firebase'
 import 'firebase/firestore'
 import { useHistory } from "react-router-dom";
@@ -12,6 +11,7 @@ const LoginForm = () => {
     const history = useHistory(); 
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
+    const[captcha, setCaptcha] = useState(false);
   
     const loginBtn = () => {
       
@@ -19,7 +19,7 @@ const LoginForm = () => {
         console.log('Hey', email, password);
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(()=>{
-          history.push('/profile')
+          history.push('/welcome')
         })
         .catch(function(error) {
           console.log(error);
