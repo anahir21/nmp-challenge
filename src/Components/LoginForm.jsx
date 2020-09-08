@@ -19,7 +19,7 @@ const LoginForm = () => {
         console.log('Hey', email, password);
         firebase.auth().signInWithEmailAndPassword(email, password)
         .then(()=>{
-          history.push('/welcome')
+          history.push('/')
         })
         .catch(function(error) {
           console.log(error);
