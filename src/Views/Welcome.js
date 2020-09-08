@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import Header from '../Components/Header';
 import Form from '../Components/Form';
+import StepsList from '../Components/StepsList';
 
 const Welcome = ({isLogin}) => {
   const history = useHistory(); 
@@ -26,6 +27,7 @@ const Welcome = ({isLogin}) => {
         onClick={enterBtn} 
       />
       <Form />
+      <StepsList />
     </div>
   )
 }
