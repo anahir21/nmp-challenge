@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import ShortHeader from '../Components/ShortHeader';
 import OnboardingText from '../Components/OnboardingText';
 import StepsList from '../Components/StepsList';
+import SmallFooter from '../Components/SmallFooter';
 
 
 const Welcome = () => {
@@ -26,6 +27,7 @@ const Welcome = () => {
       />
       <OnboardingText />
       <StepsList />
+      <SmallFooter />
     </div>
   )
 }
