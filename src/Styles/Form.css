@@ -1,14 +1,30 @@
+.a-politics {
+  color: #0E6AF6;
+}
+
 .btn-form {
   font-family: "Roboto Condensed", sans-serif;
-  height: 35px;
-  border-radius: 5px;
+  height: 50px;
+  width: 350px;
   border: 0;
   font-family: "Roboto Condensed", sans-serif;
-  background-color: #c4c4c4;
+  color: #ffffff;
+  font-size: 20px;
   padding: 0 15px;
+  margin-top: 2rem;
+  background: -webkit-gradient(linear, right top, left top, from(#EB403C), color-stop(#C9003C), to(#98002E));
+  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}
+
+.checkbox-politics {
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 1rem;
 }
 
 .customer-form {
+  margin-top: 30px;
+  margin-left: 50px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 9% 20% 9% 20% 9% 20% 9% 20% 9% 20% 12% 15%;
@@ -18,12 +34,34 @@
 .form-postulation {
   font-family: "Roboto Condensed", sans-serif;
   font-size: 13px;
+  height: 60rem;
+  padding: 25px 150px;
 }
 
 .input-date,
 .input-email,
 .input-text {
-  height: 40px;
-  width: 300px;
+  height: 30px;
+  width: 420px;
+  border-radius: 7px;
+  border: 1.4px solid #C4C4C4;
+}
+
+.labels-form {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 24px;
+}
+
+.p-form-title {
+  font-size: 26px;
+  font-style: bold;
+}
+
+.p-form-postulation-details {
+  font-size: 24px;
+}
+
+.politics {
+  font-size: 14px;
 }
 /*# sourceMappingURL=Form.css.map */
