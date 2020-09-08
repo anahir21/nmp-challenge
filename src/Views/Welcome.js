@@ -3,8 +3,8 @@ import firebase from '../Firebase/firebase'
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 import ShortHeader from '../Components/ShortHeader';
-import Form from '../Components/Form';
 import OnboardingText from '../Components/OnboardingText';
+import StepsList from '../Components/StepsList';
 
 
 const Welcome = () => {
@@ -25,7 +25,7 @@ const Welcome = () => {
       onClickFunction={closeSessionBtn}
       />
       <OnboardingText />
-      <Form />
+      <StepsList />
     </div>
   )
 }

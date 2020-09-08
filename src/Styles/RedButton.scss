@@ -1,0 +1,16 @@
+.btn-red {
+  height: 75px;
+  width: 75px;
+  border-radius: 50px;
+  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Roboto Condensed', sans-serif;
+}

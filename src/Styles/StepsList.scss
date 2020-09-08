@@ -1,0 +1,91 @@
+.wrapper-stepslist {
+  height: 140rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 7% 14% 14% 14% 14% 14% 14% 9%;
+  grid-template-rows: 5% 14% 14% 14% 14% 14% 14% 9%;
+  padding: 2rem 10rem;
+}
+
+.p-title-process {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.div-container-icon-rigth {
+  // background-color: yellow;
+
+  display: grid;
+  grid-template-columns: 60% 40%;
+  height: 18rem;
+}
+
+.div-container-icon-left {
+  // background-color: palegreen;
+  height: 22rem;
+
+  display: grid;
+  grid-template-columns: 40% 60%;
+  padding-left: 7rem;
+}
+
+.wrapper-btn-information {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  font-size: 22px;
+  padding-top: 50px;
+}
+
+.icon-form {
+  height: 300px;
+  width: 300px;
+  margin-left: 2rem;
+}
+
+.icon-house,
+.icon-doctor,
+.icon-folder,
+.icon-man,
+.icon-computer {
+  height: 250px;
+  width: 250px;
+  margin-left: 2rem;
+}
+
+.btn-red-rigth {
+  padding-top: 8rem;
+}
+
+.btn-red-rigth-top {
+  padding-top: 5rem;
+}
+
+.checkbox-politics {
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 1rem;
+}
+
+.politics {
+  font-size: 14px;
+}
+
+.a-politics {
+  color: #0E6AF6;
+}
+
+.btn-form {
+  font-family: "Roboto Condensed", sans-serif;
+  height: 50px;
+  width: 300px;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0 15px;
+  margin-top: 2rem;
+  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}
