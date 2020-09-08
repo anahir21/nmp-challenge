@@ -51,25 +51,24 @@ const Form = ({}) => {
 
   return (
     <div className="form-postulation">
-      <h3>Formulario de Postulación</h3>
+      <p className="p-form-title">Formulario de postulación</p>
       {error ? (
         <p className="alerta-error">Todos los campos son obligatorios</p>
       ) : null}
-      <p>
+      <p className="p-form-postulation-details">
         Para postular es necesario que tengas un correo electrónico y un
         teléfono celular
       </p>
       <form className="customer-form" onSubmit={submitData}>
-        <label>Nombre(s)</label>
+        <label className="labels-form">Nombre(s)</label>
         <input
           className="input-text"
           type="text"
           name="name"
-          placeholder="Nombre"
           onChange={handleChange}
           value={name}
         />
-        <label>Apellidos</label>
+        <label className="labels-form">Apellidos</label>
         <input
           className="input-text"
           type="text"
@@ -77,7 +76,7 @@ const Form = ({}) => {
           onChange={handleChange}
           value={lastname}
         />
-        <label>Fecha de nacimiento</label>
+        <label className="labels-form">Fecha de nacimiento</label>
         <input
           className="input-date"
           type="date"
@@ -85,7 +84,7 @@ const Form = ({}) => {
           onChange={handleChange}
           value={date}
         />
-        <label>Correo electrónico</label>
+        <label className="labels-form">Correo electrónico</label>
         <input
           className="input-email"
           type="email"
@@ -93,7 +92,7 @@ const Form = ({}) => {
           onChange={handleChange}
           value={email}
         />
-        <label>Teléfono celular</label>
+        <label className="labels-form">Teléfono celular</label>
         <input
           className="input-text"
           type="number"
@@ -104,18 +103,18 @@ const Form = ({}) => {
         <div>
           <input
             type="checkbox"
+            className="checkbox-politics"
             id="politics"
             name="politics"
             value="politics"
           />
-          <label for="politics">
-            He leído y estoy de acuerdo con la política de privacidad de
-            Nacional Monte de Piedad
+          <label for="politics" className="politics">
+            He leído y estoy de acuerdo con el <a href="# " className="a-politics">Aviso de Privacidad Solicitante de Empleo</a> de Nacional Monte de Piedad
           </label>
         </div>
         <div>
           <button className="btn-form" type="submit">
-            Enviar formulario
+            ENVIAR FORMULARIO
           </button>
         </div>
       </form>
