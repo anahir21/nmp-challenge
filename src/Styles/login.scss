@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+$inputBorderColor: #C4C4C4;
+
+
+.login-container{
+  //border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  
+  .login-form-container{
+    //border: 1px solid black;
+    align-self: center;
+  }
+
+  img{
+    width: 344px;
+    margin-bottom: 60px;
+  }
+
+  div{
+    //border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label{
+    margin-top: 16px;
+  }
+
+  input[type="text"], input[type="password"]{
+    width: 450px;
+    height: 50px;
+    border-style: none;
+    border-radius: 10px;
+    border: 1px solid $inputBorderColor;
+    font-size: 14px;
+    margin-top: 16px;
+  }
+
+  input[type="button"]{
+    align-self: center;
+    margin-top: 48px;
+    width: 350px;
+    height: 50px;
+    border-style: none;
+    border: 1px solid $inputBorderColor;
+    background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+  }
+
+}
