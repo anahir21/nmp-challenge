@@ -59,3 +59,33 @@
 .btn-red-rigth-top {
   padding-top: 5rem;
 }
+
+.checkbox-politics {
+  height: 1.3rem;
+  width: 1.3rem;
+  margin-right: 1rem;
+}
+
+.politics {
+  font-size: 14px;
+}
+
+.a-politics {
+  color: #0E6AF6;
+}
+
+.btn-form {
+  font-family: "Roboto Condensed", sans-serif;
+  height: 50px;
+  width: 300px;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 0 15px;
+  margin-top: 2rem;
+  background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}

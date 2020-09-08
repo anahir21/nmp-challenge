@@ -14,20 +14,45 @@
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin-top: 64px;
+  background: black;
+}
+
+.login-container .backImg {
+  width: 100%;
+  opacity: 0.75;
 }
 
 .login-container .login-form-container {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #DEDEDE;
+  position: absolute;
+  padding: 35px 59px;
 }
 
-.login-container img {
-  width: 344px;
-  margin-bottom: 60px;
+.login-container .login-form-container p {
+  font-size: 36px;
+  color: #4F4F4F;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 38px;
 }
 
-.login-container div {
+.login-container .login-form-container div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -37,33 +62,31 @@
           flex-direction: column;
 }
 
-.login-container label {
-  margin-top: 16px;
+.login-container .login-form-container label {
+  font-size: 22px;
+  color: #283238;
+  margin-bottom: 20px;
 }
 
-.login-container input[type="text"], .login-container input[type="password"] {
+.login-container .login-form-container input[type="text"], .login-container .login-form-container input[type="password"] {
   width: 450px;
   height: 50px;
   border-style: none;
   border-radius: 10px;
   border: 1px solid #C4C4C4;
-  font-size: 14px;
-  margin-top: 16px;
+  font-size: 22px;
+  margin-bottom: 20px;
 }
 
-.login-container input[type="button"] {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  margin-top: 48px;
-  width: 350px;
-  height: 50px;
+.login-container .login-form-container input[type="button"] {
+  width: 450px;
+  height: 54.34px;
   border-style: none;
-  border: 1px solid #C4C4C4;
-  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
-  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
-  font-size: 14px;
+  background: -webkit-gradient(linear, left top, right top, color-stop(5.31%, #909090), to(#C4C4C4));
+  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+  font-size: 22px;
   font-family: 'Roboto', sans-serif;
   color: white;
+  margin-top: 27.63px;
 }
 /*# sourceMappingURL=login.css.map */
