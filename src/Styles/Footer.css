@@ -63,6 +63,19 @@
   padding-top: 3rem;
 }
 
+.small-footer {
+  height: 50vh;
+  font-family: 'Roboto Condensed', sans-serif;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 27% 25% 45%;
+      grid-template-rows: 27% 25% 45%;
+  background-color: #E7F3F7;
+  -webkit-box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0px 8px 8px rgba(0, 0, 0, 0.15);
+  padding-top: 3rem;
+}
+
 .info-schedule {
   padding-right: 15px;
   padding-left: 15px;
