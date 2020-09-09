@@ -65,31 +65,31 @@ class Folder extends Component {
         <div className="folder-body">
           <div className="folder-row">
             <img alt="calendar" src={iconcalendar} className="icon-calendar" />
-            {this.state.open1 ? (
+            {this.state.open1 && (
               <CardInterviews interviewfalse="Aún no tienes agendadas citas" />
-            ) : null}
+            )}
           </div>
           <div className="folder-row">
             <img alt="time" src={icontime} className="icon-time" />
-            {this.state.open2 ? (
+            {this.state.open2 && (
               <CardInterviews
                 date="Lunes 21 de septiembre de 2020"
                 time="10:00am"
                 recruiter="Lic. Ana María"
                 zoom="www.zoom.us/nmp/0108037"
               />
-            ) : null}
+            )}
           </div>
           <div className="folder-row">
             <img alt="user" src={iconuser} className="icon-user" />
-            {this.state.open3 ? (
+            {this.state.open3 && (
               <CardInterviews
                 date="Martes 22 de septiembre de 2020"
                 time="12:00pm"
                 recruiter="Lic. Ana María"
                 zoom="www.zoom.us/nmp/0108037"
               />
-            ) : null}
+            )}
           </div>
           <div className="folder-row">
             <img alt="vector" src={iconvector} className="icon-vector" />
