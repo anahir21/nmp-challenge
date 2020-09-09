@@ -32,7 +32,7 @@ $inputBorderColor: #C4C4C4;
     
     
     p{
-      font-size: 36px;
+      font-size: 24px;
       color: #4F4F4F;
       font-weight: 600;
       margin: 0;
@@ -48,9 +48,9 @@ $inputBorderColor: #C4C4C4;
   
     label{
       
-      font-size: 22px;
+      font-size: 18px;
       color: #283238;
-      margin-bottom: 20px;
+      margin-bottom: 2px;
 
     }
   
@@ -69,17 +69,19 @@ $inputBorderColor: #C4C4C4;
       width: 450px;
       height: 54.34px;
       border-style: none;
-      background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
-      font-size: 22px;
+      font-size: 16px;
       font-family: 'Roboto', sans-serif;
       color: white;
       margin-top: 27.63px;
+      font-weight: 600;
     }
-
-
-
   }
+}
 
-  
+.btn-disabled{
+  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+}
 
+.btn-enabled{
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
 }

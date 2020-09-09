@@ -44,7 +44,7 @@
 }
 
 .login-container .login-form-container p {
-  font-size: 36px;
+  font-size: 24px;
   color: #4F4F4F;
   font-weight: 600;
   margin: 0;
@@ -63,9 +63,9 @@
 }
 
 .login-container .login-form-container label {
-  font-size: 22px;
+  font-size: 18px;
   color: #283238;
-  margin-bottom: 20px;
+  margin-bottom: 2px;
 }
 
 .login-container .login-form-container input[type="text"], .login-container .login-form-container input[type="password"] {
@@ -82,11 +82,20 @@
   width: 450px;
   height: 54.34px;
   border-style: none;
-  background: -webkit-gradient(linear, left top, right top, color-stop(5.31%, #909090), to(#C4C4C4));
-  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
-  font-size: 22px;
+  font-size: 16px;
   font-family: 'Roboto', sans-serif;
   color: white;
   margin-top: 27.63px;
+  font-weight: 600;
+}
+
+.btn-disabled {
+  background: -webkit-gradient(linear, left top, right top, color-stop(5.31%, #909090), to(#C4C4C4));
+  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+}
+
+.btn-enabled {
+  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
 }
 /*# sourceMappingURL=login.css.map */

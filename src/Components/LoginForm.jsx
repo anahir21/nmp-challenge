@@ -5,42 +5,48 @@ import 'firebase/firestore'
 import { useHistory } from "react-router-dom";
 import loginBack from '../Static/Images/login-back.png'
 import ReCaptchaComponent from './ReCaptcha'
+import { useToasts } from 'react-toast-notifications'
 
 const LoginForm = () => {
   
-    const history = useHistory(); 
-    const[email, setEmail] = useState('');
-    const[password, setPassword] = useState('');
-    const[captcha, setCaptcha] = useState(false);
-  
-    const loginBtn = () => {
-      
-      if(email && password){
-        console.log('Hey', email, password);
-        firebase.auth().signInWithEmailAndPassword(email, password)
-        .then(()=>{
-          history.push('/')
-        })
-        .catch(function(error) {
-          console.log(error);
-        });
-      }else{
-        console.log('No hay valores')
-      }
-      
+  const history = useHistory(); 
+  const[email, setEmail] = useState('');
+  const[password, setPassword] = useState('');
+  const [isVerified, setIsVerified] = useState(false);
+  const { addToast } = useToasts()
+
+  const loginBtn = () => {
+    if(isVerified && email && password){
+      firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(()=>{
+        history.push('/')
+      })
+      .catch(function(error) {
+        console.log(error);
+        addToast('Correo o contraseña incorrectos', { 
+          autoDismiss: true, 
+          placement: 'top-right', 
+          appearance: 'error' })
+      });
+    }else{
+      addToast('Ingresa tu correo y contraseña, y muéstranos que no eres un robot', { 
+        autoDismiss: true, 
+        placement: 'top-right', 
+        appearance: 'warning' })
     }
-  
+  }
+
   return (
     <div className='login-container'>
       <img className='backImg' src={loginBack} alt='backImg'/>
       <div className='login-form-container'>
         <p>
-          Bienvenido
+          Inicia sesión
         </p>
         
         <div> 
           <label for='loginUser'>
-            Ingresa tu correo electrónico
+            Correo electrónico
           </label>
           <input type='text' 
             id='loginUser' 
@@ -59,13 +65,17 @@ const LoginForm = () => {
           />
         </div>
 
-        <ReCaptchaComponent />
+        <ReCaptchaComponent 
+          isVerified={isVerified}
+          setIsVerified={setIsVerified}
+        />
               
-        <input type='button' 
+        <input type='button'
+          className={isVerified && email && password ? 'btn-enabled' : 'btn-disabled'} 
           id='loginBtn' 
-          value='Ingresar' 
+          value='INGRESAR' 
           onClick={loginBtn}
-        />          
+        />
       </div>
     </div>
   )

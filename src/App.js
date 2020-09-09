@@ -4,6 +4,7 @@ import Login from './Views/Login'
 import UserProfile from './Views/UserProfile'
 import Welcome from './Views/Welcome'
 import firebase from './Firebase/firebase'
+import { ToastProvider } from 'react-toast-notifications'
 
 
 console.log(process.env.REACT_APP_FIREBASE_API_KEY);
@@ -32,6 +33,7 @@ function App() {
   });
 
   return (
+    <ToastProvider>
     <div>
       <BrowserRouter>
         <Switch>
@@ -52,6 +54,7 @@ function App() {
         </Switch>
       </BrowserRouter> 
     </div>
+    </ToastProvider>
   );
 }
 

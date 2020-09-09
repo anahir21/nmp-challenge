@@ -20,15 +20,10 @@ const StepsList = () => {
           <RedButton step="1" />
           <div className="">
             <p>
-              <b>CV y solicitud de empleo</b>
+              <span><b>CV y solicitud de empleo</b></span>
             </p>
             <p>
-              Una vez que hayas llenado el{" "}
-              <b>
-                formulario de <br /> postulación
-              </b>
-              , accede a tu página personal donde <br /> podrás subir tu CV y tu
-              solicitud de empleo.
+             Inicia sesión para acceder a tu página personal y sube tu CV y Solictud de empleo.
             </p>
           </div>
         </div>
@@ -42,11 +37,10 @@ const StepsList = () => {
           <RedButton step="2" />
           <div>
             <p>
-              <b>Realiza tus evaluaciones</b>
+              <span><b>Realiza tus evaluaciones</b></span>
             </p>
             <p>
-              Donde encontrarás las ligas para completar tus <br /> evaluaciones
-              en línea.
+              Ahí encontrarás las ligas para completar tus evaluaciones en línea.
             </p>
           </div>
         </div>
@@ -56,7 +50,7 @@ const StepsList = () => {
           <RedButton step="3" />
           <div>
             <p>
-              <b>Prepárate para tus entrevistas</b>
+              <span><b>Prepárate para tus entrevistas</b></span>
             </p>
             <p>
               En tu página personal te indicaremos la fecha y hora <br /> de tus
@@ -73,12 +67,11 @@ const StepsList = () => {
           <RedButton step="4" />
           <div>
             <p>
-              <b>Documentación</b>
+              <span><b>Documentación</b></span>
             </p>
             <p>
-              Si los resultados de tus evaluaciones y entrevista <br /> son
-              positivos, tendrás que subir tus documentos en <br /> la
-              plataforma.
+              Si los resultados de tus evaluaciones y entrevista son positivos, 
+              tendrás que subir tus documentos en la plataforma.
             </p>
           </div>
         </div>
@@ -88,10 +81,10 @@ const StepsList = () => {
           <RedButton step="5" />
           <div>
             <p>
-              <b>Examen médico</b>
+              <span><b>Examen médico</b></span>
             </p>
             <p>
-              Eligirás entre dos sucursales de análisis clínicos <br /> para
+              Eligirás entre dos sucursales de análisis clínicos para
               realizarte unas pruebas.
             </p>
           </div>
@@ -104,11 +97,11 @@ const StepsList = () => {
           <RedButton step="6" />
           <div>
             <p>
-              <b>Estudio socioeconómico</b>
+              <span><b>Estudio socioeconómico</b></span>
             </p>
             <p>
-              Un investigador de NMP asistirá a tu domicilio para <br /> recabar
-              información sobre tu situación <br /> socioeconómica.
+              Un investigador de NMP asistirá a tu domicilio para recabar
+              información sobre tu situación socioeconómica.
             </p>
           </div>
         </div>
@@ -123,10 +116,11 @@ const StepsList = () => {
             value="politics"
           />
           <label for="politics" className="politics">
-            Acepto los{" "}
+          Confirmo que he leído y acepto el Aviso Legal 
+          sobre Protección de Datos Personales y los {" "}
             <a href="# " className="a-politics">
-              términos y condiciones
-            </a>{" "}
+            <span>Términos y Condiciones </span>
+            </a> {" "} de este concurso.
           </label>
         </div>
         <button className="btn-form" type="submit">

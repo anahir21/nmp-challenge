@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Recaptcha from "react-recaptcha";
 
-const ReCaptchaComponent = () => {
-  const [isVerified, setIsVerified] = useState(false);
+const ReCaptchaComponent = ({isVerified,setIsVerified}) => {
+  
 
   const recaptchaLoaded = () => {
     console.log("capcha successfully loaded");
@@ -18,9 +18,11 @@ const ReCaptchaComponent = () => {
 
   const verifyCallback = (response) => {
     if (response) {
+      /*
       this.setState({
         isVerified: true,
-      });
+      });*/
+      setIsVerified(true);
     }
   };
 

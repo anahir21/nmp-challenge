@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 .wrapper-stepslist {
   height: 140rem;
   display: -ms-grid;
@@ -5,11 +7,13 @@
   -ms-grid-rows: 7% 14% 14% 14% 14% 14% 14% 9%;
   grid-template-rows: 5% 14% 14% 14% 14% 14% 14% 9%;
   padding: 2rem 10rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .p-title-process {
-  font-size: 26px;
-  font-weight: bold;
+  font-size: 34px;
+  font-family: "Roboto", sans-serif;
+  color: #283238;
 }
 
 .div-container-icon-rigth {
@@ -32,13 +36,17 @@
 .wrapper-btn-information {
   display: grid;
   grid-template-columns: 20% 80%;
-  font-size: 22px;
+  font-size: 16px;
   padding-top: 50px;
+  color: #283238;;
+  span{
+    font-size: 24px;
+  }
 }
 
 .icon-form {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   margin-left: 2rem;
 }
 
@@ -47,9 +55,13 @@
 .icon-folder,
 .icon-man,
 .icon-computer {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   margin-left: 2rem;
+}
+
+.icon-computer{
+  align-self: center;
 }
 
 .btn-red-rigth {
@@ -67,19 +79,20 @@
 }
 
 .politics {
-  font-size: 14px;
+  font-size: 16px;
+  color: #283238;
 }
 
-.a-politics {
-  color: #0E6AF6;
+.a-politics span{
+  color: #007FAA;
 }
 
 .btn-form {
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
   height: 50px;
   width: 300px;
   border: 0;
-  font-family: "Roboto Condensed", sans-serif;
   color: #ffffff;
   font-size: 20px;
   padding: 0 15px;
