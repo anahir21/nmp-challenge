@@ -1,6 +1,7 @@
 import React from 'react'
 import firebase from '../Firebase/firebase'
 import { useHistory } from "react-router-dom";
+import Progress from "../Components/Progress";
 import Recommendations from "../Components/Recommendations";
 
 const UserProfile = () => {
@@ -23,6 +24,7 @@ const UserProfile = () => {
           value='Cerrar Sesión' 
           onClick={closeSessionBtn}
         />
+        <Progress />
         <Recommendations />
       
     </div>
