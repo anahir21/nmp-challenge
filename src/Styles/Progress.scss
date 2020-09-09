@@ -1,0 +1,62 @@
+.arrow {
+  color: #2F7FAA;
+  font-size: 60px;
+}
+
+.icon-progress-form {
+  height: 145px;
+  width: 145px;
+}
+
+.icon-progress-house,
+.icon-progress-doctor,
+.icon-progress-folder,
+.icon-progress-man,
+.icon-progress-computer {
+  height: 140px;
+  width: 140px;
+}
+
+.p-check-recommendations {
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+}
+
+.progress {
+  height: 150px;
+  padding: 0.5rem 0rem;
+  display: grid;
+  grid-template-columns: 10% 6% 10% 6% 10% 6% 10% 6% 10% 6% 10% ;
+}
+
+.title-progress {
+  font-size: 34px;
+  font-family: "Roboto", sans-serif;
+  color: #283238;
+}
+
+.wrapper-arrow {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper-p-steps {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.wrapper-progress {
+  height: 460px;
+  display: grid;
+  grid-template-rows: 25% 55% 15%;
+  padding-left: 5rem;
+}
