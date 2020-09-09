@@ -6,6 +6,7 @@ import ShortHeader from '../Components/ShortHeader';
 import OnboardingText from '../Components/OnboardingText';
 import StepsList from '../Components/StepsList';
 import SmallFooter from '../Components/SmallFooter';
+import Folder from '../Components/Folder';
 
 
 const Welcome = () => {
@@ -25,6 +26,7 @@ const Welcome = () => {
       <ShortHeader 
       onClickFunction={closeSessionBtn}
       />
+      <Folder/>
       <OnboardingText />
       <StepsList />
       <SmallFooter />

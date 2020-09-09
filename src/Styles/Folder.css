@@ -1,0 +1,55 @@
+.folder-body {
+  background-color: #ffffff;
+  height: 211px;
+  width: 515px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 7px 1px rgba(196, 196, 196, 0.98);
+  box-shadow: 0px 5px 7px 1px rgba(196, 196, 196, 0.98);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 22% 22% 22% 22%;
+      grid-template-rows: 22% 22% 22% 22%;
+  padding-top: 30px;
+  position: absolute;
+  margin-top: 47px;
+  margin-bottom: 2rem;
+}
+
+.wrapper-folder {
+  height: 22rem;
+  padding-left: 2rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 16% 84%;
+      grid-template-rows: 16% 84%;
+}
+
+.folder-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 85%;
+      grid-template-columns: 15% 85%;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #283238;
+  font-family: 16px;
+  padding-left: 3rem;
+}
+
+.separator {
+  border-style: solid;
+  border-color: #D73F3C transparent #D73F3C #D73F3C;
+  border-width: 0 25px 40px 25px;
+  height: 0px;
+  width: 110px;
+  position: relative;
+  margin: 20px 0 0px 0;
+  border-radius: 5px;
+}
+
+.container-separators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+/*# sourceMappingURL=Folder.css.map */
