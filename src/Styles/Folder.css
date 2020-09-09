@@ -35,17 +35,6 @@
   padding-left: 3rem;
 }
 
-.separator {
-  border-style: solid;
-  border-color: #D73F3C transparent #D73F3C #D73F3C;
-  border-width: 0 25px 40px 25px;
-  height: 0px;
-  width: 110px;
-  position: relative;
-  margin: 20px 0 0px 0;
-  border-radius: 5px;
-}
-
 .container-separators {
   display: -webkit-box;
   display: -ms-flexbox;
