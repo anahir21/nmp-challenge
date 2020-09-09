@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import CardInterviews from "../assets/CardInterviews";
+
 import iconcalendar from "../Static/Images/icon-calendar.png";
 import icontime from "../Static/Images/icon-time.png";
 import iconuser from "../Static/Images/icon-user.png";
@@ -63,13 +65,31 @@ class Folder extends Component {
         <div className="folder-body">
           <div className="folder-row">
             <img alt="calendar" src={iconcalendar} className="icon-calendar" />
-            <p>Aún no tienes agendadas citas</p>
+            {this.state.open1 && (
+              <CardInterviews interviewfalse="Aún no tienes agendadas citas" />
+            )}
           </div>
           <div className="folder-row">
             <img alt="time" src={icontime} className="icon-time" />
+            {this.state.open2 && (
+              <CardInterviews
+                date="Lunes 21 de septiembre de 2020"
+                time="10:00am"
+                recruiter="Lic. Ana María"
+                zoom="www.zoom.us/nmp/0108037"
+              />
+            )}
           </div>
           <div className="folder-row">
             <img alt="user" src={iconuser} className="icon-user" />
+            {this.state.open3 && (
+              <CardInterviews
+                date="Martes 22 de septiembre de 2020"
+                time="12:00pm"
+                recruiter="Lic. Ana María"
+                zoom="www.zoom.us/nmp/0108037"
+              />
+            )}
           </div>
           <div className="folder-row">
             <img alt="vector" src={iconvector} className="icon-vector" />
