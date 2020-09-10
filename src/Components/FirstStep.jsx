@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import Modal from "./Modal";
 import RedButton from "../assets/RedButton";
 import ShortButton from "../assets/ShortButton";
 import "../Styles/FirstStep.css";
 
 const FirstStep = () => {
+  const [isOpened, setOpened] = useState(false);
+  const openModal = () => setOpened(true);
+  const closeModal = () => setOpened(false);
   return (
     <div className="wrapper-first-step">
       <p className="p-title-first-step">¡Comencemos!</p>
@@ -35,7 +39,11 @@ const FirstStep = () => {
           </span>{" "}
           sobre esta etapa.
         </p>
-        <ShortButton title="ENVIAR" />
+        <ShortButton title="ENVIAR" onClick={openModal} />
+        <button onClick={openModal}>button</button>
+        <Modal title="welcome" isOpened={isOpened} onClose={closeModal}>
+          This is a modal
+        </Modal>
       </div>
     </div>
   );

@@ -1,0 +1,131 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1050;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  outline: 0;
+  background-color: rgba(80, 80, 80, 0.5);
+}
+
+.modal-dialog {
+  background-color: goldenrod;
+  position: relative;
+  width: 971px;
+  margin: 0.5rem;
+  pointer-events: none;
+  height: 502px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 971px;
+    margin: 1.75rem auto;
+  }
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: pink;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+  height: 502px;
+}
+
+.wrapper-img-recruiter-name {
+  background-color: greenyellow;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 70% 30%;
+      grid-template-rows: 70% 30%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 502px;
+}
+
+.img-recruiter {
+  height: 250px;
+  width: 250px;
+}
+
+.modal-wrapper-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 35% 55% 10%;
+      grid-template-columns: 35% 55% 10%;
+}
+
+.modal-header {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: start;
+  -webkit-box-align: start;
+          align-items: flex-start;
+  -ms-flex-pack: justify;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dee2e6;
+  border-top-left-radius: calc(0.3rem - 1px);
+  border-top-right-radius: calc(0.3rem - 1px);
+}
+
+.modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  -webkit-box-flex: 1;
+          flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.modal-transition-appear {
+  -webkit-transition: -webkit-transform 300ms;
+  transition: -webkit-transform 300ms;
+  transition: transform 300ms;
+  transition: transform 300ms, -webkit-transform 300ms;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+}
+
+.modal-transition-appear-active {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.wrapper-recruiter-information {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-grid-rows: 10% 90%;
+      grid-template-rows: 10% 90%;
+  margin-top: 5rem;
+}
+
+.p-recruiter-title {
+  font-size: 34px;
+  color: #891d28;
+}
+/*# sourceMappingURL=Modal.css.map */
