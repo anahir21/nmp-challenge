@@ -3,6 +3,7 @@ import firebase from '../Firebase/firebase'
 import { useHistory } from "react-router-dom";
 import Progress from "../Components/Progress";
 import Recommendations from "../Components/Recommendations";
+import FirstStep from "../Components/FirstStep";
 
 const UserProfile = () => {
   const history = useHistory(); 
@@ -25,6 +26,7 @@ const UserProfile = () => {
           onClick={closeSessionBtn}
         />
         <Progress />
+        <FirstStep />
         <Recommendations />
       
     </div>
