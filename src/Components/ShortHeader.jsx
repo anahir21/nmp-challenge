@@ -1,8 +1,23 @@
 import React from 'react'
+import firebase from '../Firebase/firebase'
 import '../Styles/onboarding.css'
 import nmp from "../Static/Images/nmp.png";
+import { useHistory } from "react-router-dom";
 
-const ShortHeader = ({onClickFunction}) => {
+const ShortHeader = () => {
+  
+  const history = useHistory(); 
+
+  const closeSessionBtn = () => {
+    firebase.auth().signOut()
+    .then(function() {
+      history.push('/')
+    }).catch(function(error) {
+      console.log(error);
+    });
+  }
+  
+  
   return (
     <div className="shortHeader-container">
       <img alt="nmp-img" src={nmp} className="nmp-img" />
@@ -17,7 +32,7 @@ const ShortHeader = ({onClickFunction}) => {
           id=''
           className='close-btn' 
           value='CERRAR SESIÓN'
-          onClick={onClickFunction} 
+          onClick={closeSessionBtn} 
         />
       </div>
     

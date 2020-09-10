@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+.recruiter-container {
+  width: 494px;
+  height: 288px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding: 17px;
+}
+
+.recruiter-container span {
+  font-weight: 600;
+}
+
+.recruiter-container .recruiter-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.recruiter-container .recruiter-name {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.recruiter-container .recruiter-name p {
+  margin: 0.4em;
+}
+
+.recruiter-container .recruiter-name .title {
+  font-size: 18px;
+  line-height: 2em;
+}
+
+.recruiter-container .recruiter-name .name {
+  font-size: 16px;
+}
+
+.recruiter-container .recruiter-name .mail {
+  font-size: 14px;
+  line-height: 1.5em;
+}
+
+.recruiter-container .recruiter-call {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-align: center;
+  margin-top: 44px;
+}
+
+.recruiter-container .recruiter-call img {
+  margin: auto;
+}
+
+.recruiter-container .recruiter-call p {
+  margin: 0;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 12px;
+}
+
+.recruiter-container .recruiter-contact {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.recruiter-container .recruiter-contact img {
+  border-radius: 50%;
+  width: 117px;
+  height: 117px;
+}
+
+.recruiter-container .recruiter-contact input[type='button'] {
+  width: 117px;
+  height: 33px;
+  background: #FFD359;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  border-style: none;
+  color: #975778;
+  margin-top: 56px;
+}
+/*# sourceMappingURL=recruiter.css.map */

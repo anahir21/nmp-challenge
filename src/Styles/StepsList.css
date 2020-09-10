@@ -101,7 +101,15 @@
   font-size: 20px;
   padding: 0 15px;
   margin-top: 2rem;
-  background: -webkit-gradient(linear, right top, left top, from(#EB403C), color-stop(#C9003C), to(#98002E));
-  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}
+
+.btn-disabled {
+  background: -webkit-gradient(linear, left top, right top, color-stop(5.31%, #909090), to(#C4C4C4));
+  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+}
+
+.btn-enabled {
+  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
 }
 /*# sourceMappingURL=StepsList.css.map */
