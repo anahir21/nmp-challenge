@@ -2,9 +2,29 @@ import React, { useState, useEffect } from "react";
 import RedButton from "../assets/RedButton";
 import Status from '../assets/Status'
 import "../Styles/FirstStep.css";
+import nextIcon from '../Static/Images/next.png'
 
 
-const FirstStepUp = () => {
+const FirstStepUp = ({testStatus, setTestStatus}) => {
+
+    setTimeout(function(){  
+      setTestStatus('done')
+    }, 3000);
+  
+  const btnNext = () => {
+    if(testStatus==='review'){
+      return null
+    }else{
+      return  <div className="next-step"> 
+                <div>
+                  <p>Ir al siguiente paso</p>  
+                </div>
+                <div>
+                  <img alt={nextIcon} src={nextIcon} className=""/>
+                </div>
+              </div>
+    } 
+  }
  
   return (
     <div className="wrapper-first-step">
@@ -25,10 +45,12 @@ const FirstStepUp = () => {
       />
 
       <Status 
-        status='review'
+        status={testStatus}
         title='Estatus del proceso'
-        descrip='En revisión'
+        descrip={testStatus==='review' ? 'En revisión' : 'Verificado'}
       />
+
+      {btnNext()}
 
     </div>
   );

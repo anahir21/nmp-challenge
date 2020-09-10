@@ -11,13 +11,22 @@ import iconfolder from "../Static/Images/icon4-folder.png";
 import icondoctor from "../Static/Images/icon5-doctor.png";
 import iconhouse from "../Static/Images/icon6-house.png";
 
-const Progress = () => {
+import iconformC from "../Static/Images/icon1-form-c.png";
+import iconcomputerC from "../Static/Images/icon2-computer-c.png";
+import iconmanC from "../Static/Images/icon3-man-c.png";
+import iconfolderC from "../Static/Images/icon4-folder-c.png";
+import icondoctorC from "../Static/Images/icon5-doctor-c.png";
+import iconhouseC from "../Static/Images/icon6-house-c.png";
+
+
+const Progress = ({testStatus}) => {
   return (
     <div className="wrapper-progress">
       <p className="title-progress">Tu avance</p>
       <div className="progress">
         <div>
-          <img alt="iconform" src={iconform} className="icon-progress-form"/>
+          <img alt="iconform" src={testStatus === 'review' ? iconform : iconformC}
+           className={testStatus === 'review' ? "icon-progress-form" : "icon-progress-formC"}/>
           <div className="wrapper-p-steps">
             <p>CV y Solicitud de empleo</p>
           </div>

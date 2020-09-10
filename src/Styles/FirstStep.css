@@ -85,4 +85,48 @@
 .status-container img {
   margin: 15px 20px;
 }
+
+.next-step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: 20px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.next-step div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.next-step p {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #283238;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.next-step img {
+  border-radius: 50%;
+  border: 3px solid #007FAA;
+  padding: 5px;
+  margin-right: 100px;
+}
 /*# sourceMappingURL=FirstStep.css.map */

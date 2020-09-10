@@ -13,7 +13,7 @@ const Status = ({status, title, descrip}) => {
         }else{
             setStatusIcon(reviewIcon); 
         }
-    }, [])
+    })
     
 
     return (

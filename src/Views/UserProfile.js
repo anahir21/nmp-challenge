@@ -17,12 +17,15 @@ const db = firebase.firestore();
 const UserProfile = () => {
   const [user, setUser] = useState({})
   const [recruiter, setRecruiter] = useState({})
-  const [areFilesUp, setAreFilesUp] = useState(false);
+  const [areFilesUp, setAreFilesUp] = useState(true);
+  const [testStatus, setTestStatus] = useState('review')
   
   const renderStepOne = () => {
     if(areFilesUp){
       return <FirstStepUp 
               user={user}
+              testStatus={testStatus} 
+              setTestStatus={setTestStatus}
             />
     }else{
       return <FirstStep 
@@ -73,7 +76,9 @@ const UserProfile = () => {
           />
         </div>
       </div>
-      <Progress />
+      <Progress 
+        testStatus={testStatus}
+      />
       {renderStepOne()}
       
       <Recommendations />
