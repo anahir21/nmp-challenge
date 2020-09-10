@@ -1,4 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.profile-container{
+    //border: 1px solid black;
+}
+
 
 .welcome-user{
+    border: 0.1px solid white;
     background-color: #F3F3F3;
+    height: 650px;
+    
+}
+
+.folder-title{
+    //border: 1px solid black;
+    width: 1221px;
+    margin: auto;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+}
+
+.folder-recruiter{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 1221px;
+    margin: auto;
+}
+
+.upload-file-container{
+    //border: 1px solid black;
+    width: 542px;
+    height: 50px;
+    position: relative; 
+
+    input[type='file']{
+        display: none;
+    }
+    input[type='text']:disabled{
+        box-sizing: border-box;
+        width: 542px;
+        height: 50px;
+        border-radius: 10px;
+        border-style: none;
+        border: 1px solid #C4C4C4;
+        padding: 14px;
+        background-color: white;
+        
+    }
+
+    .up-file{
+        position: absolute;
+        top: 12px;
+        right: 12px;
+    }
+}
+
+.btn-disabled{
+    background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+}
+
+.btn-enabled{
+    background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
 }

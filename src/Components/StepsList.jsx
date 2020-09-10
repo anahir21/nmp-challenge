@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import RedButton from "../assets/RedButton";
-import iconform from "../Static/Images/icon1-form.png";
-import iconcomputer from "../Static/Images/icon2-computer.png";
-import iconman from "../Static/Images/icon3-man.png";
-import iconfolder from "../Static/Images/icon4-folder.png";
-import icondoctor from "../Static/Images/icon5-doctor.png";
-import iconhouse from "../Static/Images/icon6-house.png";
+import iconform from "../Static/Images/icon1-form-c.png";
+import iconcomputer from "../Static/Images/icon2-computer-c.png";
+import iconman from "../Static/Images/icon3-man-c.png";
+import iconfolder from "../Static/Images/icon4-folder-c.png";
+import icondoctor from "../Static/Images/icon5-doctor-c.png";
+import iconhouse from "../Static/Images/icon6-house-c.png";
 import { useHistory } from "react-router-dom";
 import { useToasts } from 'react-toast-notifications'
 
@@ -38,7 +38,7 @@ const StepsList = () => {
   }
 
   let getWelcomeMsg=async()=>{
-    let url="http://localhost:4000/welcome"
+    let url="http://localhost:5000/welcome"
     let getFetchUrl=await fetch(url).then(result=>result.json())
     console.log(getFetchUrl)
     //setMensaje(getFetchUrl)

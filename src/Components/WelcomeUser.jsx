@@ -13,7 +13,7 @@ const WelcomeUser = ({user}) => {
 				Podrás visualizar tu avance, conocer los requisitos de cada paso y acceder 
 				a recomendaciones que te ayudarán a que tu avance sea exitoso.
 			</p>
-			<p>
+			<p className="position">
 				Tu vacante: <span> {user.position} </span>
 			</p>	
 		</div>

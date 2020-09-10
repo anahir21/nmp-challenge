@@ -1,0 +1,43 @@
+.folder-body {
+  background-color: #ffffff;
+  height: 211px;
+  width: 515px;
+  border-radius: 12px;
+  -webkit-box-shadow: 0px 5px 7px 1px rgba(196, 196, 196, 0.98);
+  box-shadow: 0px 5px 7px 1px rgba(196, 196, 196, 0.98);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 22% 22% 22% 22%;
+      grid-template-rows: 22% 22% 22% 22%;
+  padding-top: 30px;
+  position: absolute;
+  margin-top: 47px;
+  margin-bottom: 2rem;
+}
+
+.wrapper-folder {
+  height: 22rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 16% 84%;
+      grid-template-rows: 16% 84%;
+}
+
+.folder-row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 15% 85%;
+      grid-template-columns: 15% 85%;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: #283238;
+  font-family: 16px;
+  padding-left: 3rem;
+}
+
+.container-separators {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+/*# sourceMappingURL=Folder.css.map */

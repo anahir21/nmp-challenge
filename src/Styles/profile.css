@@ -1,4 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 .welcome-user {
+  border: 0.1px solid white;
   background-color: #F3F3F3;
+  height: 650px;
+}
+
+.folder-title {
+  width: 1221px;
+  margin: auto;
+  margin-bottom: 25px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
+.folder-recruiter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 1221px;
+  margin: auto;
+}
+
+.upload-file-container {
+  width: 542px;
+  height: 50px;
+  position: relative;
+}
+
+.upload-file-container input[type='file'] {
+  display: none;
+}
+
+.upload-file-container input[type='text']:disabled {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 542px;
+  height: 50px;
+  border-radius: 10px;
+  border-style: none;
+  border: 1px solid #C4C4C4;
+  padding: 14px;
+  background-color: white;
+}
+
+.upload-file-container .up-file {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
+.btn-disabled {
+  background: -webkit-gradient(linear, left top, right top, color-stop(5.31%, #909090), to(#C4C4C4));
+  background: linear-gradient(90deg, #909090 5.31%, #C4C4C4 100%);
+}
+
+.btn-enabled {
+  background: -webkit-gradient(linear, left top, right top, from(#891928), to(#EA3E3C));
+  background: linear-gradient(90deg, #891928 0%, #EA3E3C 100%);
 }
 /*# sourceMappingURL=profile.css.map */

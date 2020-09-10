@@ -5,7 +5,6 @@ import OnboardingText from '../Components/OnboardingText';
 import StepsList from '../Components/StepsList';
 import SmallFooter from '../Components/SmallFooter';
 
-
 const Welcome = () => {
   
 

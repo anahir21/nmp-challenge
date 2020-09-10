@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 .welcomeUser-container{
-    border: 1px solid black;
+    //border: 1px solid black;
     width: 1221px;
     font-family: 'Roboto', sans-serif;
     margin: auto;
@@ -15,6 +15,10 @@
         font-size: 16px;
         color: #283238;
         line-height: 1.4em;
+    }
+
+    .position{
+        line-height: 3em;
     }
 
     span{
