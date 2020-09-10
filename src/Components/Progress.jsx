@@ -11,7 +11,7 @@ import iconfolder from "../Static/Images/icon4-folder.png";
 import icondoctor from "../Static/Images/icon5-doctor.png";
 import iconhouse from "../Static/Images/icon6-house.png";
 
-import iconformC from "../Static/Images/icon1-form-c.png";
+import iconformC from "../Static/Images/icon1-form-copy.png";
 import iconcomputerC from "../Static/Images/icon2-computer-c.png";
 import iconmanC from "../Static/Images/icon3-man-c.png";
 import iconfolderC from "../Static/Images/icon4-folder-c.png";

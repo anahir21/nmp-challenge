@@ -153,7 +153,7 @@ const StepsList = () => {
           <label for="politics" className="politics">
           Confirmo que he leído y acepto el Aviso Legal 
           sobre Protección de Datos Personales y los {" "}
-            <a href="# " className="a-politics">
+            <a target="_blanck" href="https://www.montepiedad.com.mx/legales-aviso-de-privacidad-empleo" className="a-politics">
             <span>Términos y Condiciones </span>
             </a> {" "} de este concurso.
           </label>

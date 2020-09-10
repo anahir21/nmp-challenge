@@ -17,7 +17,7 @@ const db = firebase.firestore();
 const UserProfile = () => {
   const [user, setUser] = useState({})
   const [recruiter, setRecruiter] = useState({})
-  const [areFilesUp, setAreFilesUp] = useState(true);
+  const [areFilesUp, setAreFilesUp] = useState(false);
   const [testStatus, setTestStatus] = useState('review')
   
   const renderStepOne = () => {
@@ -33,6 +33,10 @@ const UserProfile = () => {
             /> 
     }
   }
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   useEffect(() => {
     const user = firebase.auth().currentUser;
