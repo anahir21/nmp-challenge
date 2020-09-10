@@ -2,7 +2,7 @@ import React from 'react'
 import '../Styles/recruiter.css'
 import whatsapp from '../Static/Images/whatsapp-logo.png'
 
-const Recruiter = ({recruiter}) => {
+const Recruiter = ({recruiter, onClick}) => {
     return (
       <div className='recruiter-container'>
         <div className='recruiter-info'>
@@ -39,7 +39,8 @@ const Recruiter = ({recruiter}) => {
           <img className='recruiter-photo' src={recruiter.photo} alt="recruiter-photo"></img>
           <input type='button'
           id='loginBtn' 
-          value='MÁS SOBRE MÍ' 
+          value='MÁS SOBRE MÍ'
+          onClick={onClick} 
           />
         </div>
       </div>

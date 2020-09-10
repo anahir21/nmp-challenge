@@ -10,6 +10,7 @@ import Recommendations from "../Components/Recommendations";
 import FirstStep from "../Components/FirstStep";
 import Folder from '../Components/Folder'
 import FirstStepUp from '../Components/FirstStepUp'
+import Modal from "../Components/Modal";
 import '../Styles/profile.css'
 
 const db = firebase.firestore();
@@ -19,6 +20,10 @@ const UserProfile = () => {
   const [recruiter, setRecruiter] = useState({})
   const [areFilesUp, setAreFilesUp] = useState(false);
   const [testStatus, setTestStatus] = useState('review')
+
+  const [isOpened, setOpened] = useState(false);
+  const openModal = () => setOpened(true);
+  const closeModal = () => setOpened(false);
   
   const renderStepOne = () => {
     if(areFilesUp){
@@ -77,6 +82,7 @@ const UserProfile = () => {
           <Folder/>
           <Recruiter 
             recruiter={recruiter}
+            onClick={openModal}
           />
         </div>
       </div>
@@ -86,7 +92,11 @@ const UserProfile = () => {
       {renderStepOne()}
       
       <Recommendations />
-      <SmallFooter />    
+      <SmallFooter />
+      
+        <Modal title="welcome" isOpened={isOpened} onClose={closeModal}>
+          This is a modal
+        </Modal>    
     </div>
   )
 }
