@@ -1,26 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-.btn-red {
-  height: 75px;
-  width: 75px;
-  border-radius: 50px;
-  background: -webkit-gradient(linear, right top, left top, from(#EB403C), color-stop(#C9003C), to(#98002E));
-  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
-  display: -ms-grid;
-  display: grid;
-  justify-items: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #F3F3F3;
-  font-size: 64px;
-  font-weight: 900;
-  font-family: 'Roboto', sans-serif;
-}
-
 p {
   color: #891928;
   font-family: Roboto;
   font-size: medium;
 }
-/*# sourceMappingURL=RecruiterView.css.map */
+
+.btn-form {
+  font-family: "Roboto Condensed", sans-serif;
+  height: 50px;
+  width: 300px;
+  border: 0;
+  font-family: "Roboto Condensed", sans-serif;
+  color: #98002E;
+  font-size: 20px;
+  padding: 0 15px;
+  margin-top: 2rem;
+  background: -webkit-gradient(linear, right top, left top, from(#EB403C), color-stop(#C9003C), to(#98002E));
+  background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}
+/*# sourceMappingURL=recruiterView.css.map */

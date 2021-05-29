@@ -63,10 +63,10 @@ const Recruiters = () => {
       <div className='displayDataCandidates'>
       <div>
         <p className="welcomeUser-title">
-				  ¡Hola, {user.name}!
+				  ¡Hola, Alexander!
 			  </p>
         <select
-          className ="selectFilter"
+          className ="selectFilter btn-form"
           type="number"
           onChange={(e) => {
           setValue(e.target.value);
@@ -80,7 +80,7 @@ const Recruiters = () => {
           <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
         </select>
         <select
-          className ="selectFilter"
+          className ="selectFilter btn-form"
           type="number"
           onChange={(e) => {
           setValue(e.target.value);
@@ -99,7 +99,7 @@ const Recruiters = () => {
 
         <input type='button' 
           id=''
-          className='close-btn' 
+          className='btn-form' 
           value='REGISTRAR NUEVO CANDIDATO'
           onClick={registerCandidateBtn} 
         />
