@@ -7,13 +7,13 @@ const UserTable = () => (
   <table className='tableStyle'>
     <thead>
       <tr>
-        <th>Joya</th>
-        <th>Vacante</th>
-        <th>Nombre</th>
-        <th>Correo</th>
-        <th>Teléfono</th>
-        <th>Link CV</th>
-        <th>Status</th>
+        <th></th>
+        <th>VACANTE</th>
+        <th>NOMBRE</th>
+        <th>CORREO</th>
+        <th>TELÉFONO</th>
+        <th>LINK CV</th>
+        <th>STATUS</th>
         <th></th>
       </tr>
     </thead>
@@ -27,7 +27,7 @@ const UserTable = () => (
         <td>LINK ANA C.V.</td>
         <td>EN EVALUACIÓN</td>
         <td>
-          <button className="" onClick={console.log('Si sirvo, actualizo')}>ACTUALIZAR ESTADO</button>
+          <button className="MyButton" onClick={console.log('Si sirvo, actualizo')}>ACTUALIZAR ESTADO</button>
         </td>
       </tr>
     </tbody>
