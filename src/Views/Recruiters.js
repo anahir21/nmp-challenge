@@ -52,60 +52,53 @@ const Recruiters = () => {
   return (
     <div className='profile-container'>
       <ShortHeader />
-      {/* <div className='welcome-user'>
-        <WelcomeUser 
-          user={user}
-        /> 
-        <p className="welcomeUser-title">
-				¡Hola, {user.name}!
-			  </p>
-      </div>       */}
       <div className='displayDataCandidates'>
-      <div>
         <p className="welcomeUser-title">
 				  ¡Hola, Alexander!
 			  </p>
-        <select
-          className ="selectFilter btn-form"
-          type="number"
-          onChange={(e) => {
-          setValue(e.target.value);
+        <div className="buttonsRecruiters">
+          <div className="selectsRecluters">
+            <select
+              className ="btn-selectRecluter"
+              type="number"
+              onChange={(e) => {
+              setValue(e.target.value);
+            }}>
+              <option value="">FILTRAR POR STATUS</option>
+              <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
+              <option value="EVA">EVALUACIÓN</option>
+              <option value="ENT">ENTREVISTAS</option>
+              <option value="DOC">DOCUMENTACIÓN</option>
+              <option value="EXME">EXAMEN MÉDICO</option>
+              <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
+            </select>
+            <select
+            className ="btn-selectRecluter"
+            type="number"
+            onChange={(e) => {
+            setValue(e.target.value);
           }}>
-          <option value="">FILTRAR POR STATUS</option>
-          <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
-          <option value="EVA">EVALUACIÓN</option>
-          <option value="ENT">ENTREVISTAS</option>
-          <option value="DOC">DOCUMENTACIÓN</option>
-          <option value="EXME">EXAMEN MÉDICO</option>
-          <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
-        </select>
-        <select
-          className ="selectFilter btn-form"
-          type="number"
-          onChange={(e) => {
-          setValue(e.target.value);
-          }}>
-          <option value="">FILTRAR POR VACANTE</option>
-          <option value="BI">BUSSINESS INTELLIGENCE</option>
-          <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
-          <option value="EC">ESTRATEGÍA COMERCIAL</option>
-          <option value="OPP">OPERACIÓN PRENDARIA</option>
-          <option value="SEG">SERVICIOS GENERALES</option>
-          <option value="CPR">CONTROL PRESUPUESTAL</option>
-          <option value="AUD">AUDITORÍA</option>
-          <option value="PRD">PRODUCTOS</option>
-          <option value="PFI">PLANEACIÓN FINANCIERA</option>
-        </select>
-
-        <input type='button' 
-          id=''
-          className='btn-form' 
-          value='REGISTRAR NUEVO CANDIDATO'
-          onClick={registerCandidateBtn} 
-        />
+            <option value="">FILTRAR POR VACANTE</option>
+            <option value="BI">BUSSINESS INTELLIGENCE</option>
+            <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
+            <option value="EC">ESTRATEGÍA COMERCIAL</option>
+            <option value="OPP">OPERACIÓN PRENDARIA</option>
+            <option value="SEG">SERVICIOS GENERALES</option>
+            <option value="CPR">CONTROL PRESUPUESTAL</option>
+            <option value="AUD">AUDITORÍA</option>
+            <option value="PRD">PRODUCTOS</option>
+            <option value="PFI">PLANEACIÓN FINANCIERA</option>
+          </select>
+          </div>
+          <input type='button' 
+            id=''
+            className='btn-formNewCandidate' 
+            value='REGISTRAR NUEVO CANDIDATO'
+            onClick={registerCandidateBtn} 
+          />
         
-      </div>
-      <TableRecluter />
+        </div>
+        <TableRecluter />
       </div>
       <SmallFooter />   
     </div> 
