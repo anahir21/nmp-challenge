@@ -1,16 +1,19 @@
 import React, {useEffect, useState}  from 'react'
 import ShortHeader from '../Components/ShortHeader';
 import SmallFooter from '../Components/SmallFooter';
+import TableRecluter from '../Components/TableRecluter';
 // import WelcomeUser from '../Components/WelcomeUser';
 import firebase from '../Firebase/firebase'
 import 'firebase/firestore'
 import '../Styles/profile.css'
+import '../Styles/RecruiterView.css'
 
 const db = firebase.firestore();
 
 const Recruiters = () => {
   const [user, setUser] = useState({});
   const [recruiter, setRecruiter] = useState({})
+  const [value, setValue] = useState();
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -41,16 +44,68 @@ const Recruiters = () => {
     }
   }, [])
 
+  const registerCandidateBtn = () => {
+    console.log('Btn Register User');
+    }
+  
+
   return (
     <div className='profile-container'>
       <ShortHeader />
       {/* <div className='welcome-user'>
         <WelcomeUser 
           user={user}
-        />
+        /> 
+        <p className="welcomeUser-title">
+				¡Hola, {user.name}!
+			  </p>
       </div>       */}
+      <div className='displayDataCandidates'>
       <div>
+        <p className="welcomeUser-title">
+				  ¡Hola, Alexander!
+			  </p>
+        <select
+          className ="selectFilter btn-form"
+          type="number"
+          onChange={(e) => {
+          setValue(e.target.value);
+          }}>
+          <option value="">FILTRAR POR STATUS</option>
+          <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
+          <option value="EVA">EVALUACIÓN</option>
+          <option value="ENT">ENTREVISTAS</option>
+          <option value="DOC">DOCUMENTACIÓN</option>
+          <option value="EXME">EXAMEN MÉDICO</option>
+          <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
+        </select>
+        <select
+          className ="selectFilter btn-form"
+          type="number"
+          onChange={(e) => {
+          setValue(e.target.value);
+          }}>
+          <option value="">FILTRAR POR VACANTE</option>
+          <option value="BI">BUSSINESS INTELLIGENCE</option>
+          <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
+          <option value="EC">ESTRATEGÍA COMERCIAL</option>
+          <option value="OPP">OPERACIÓN PRENDARIA</option>
+          <option value="SEG">SERVICIOS GENERALES</option>
+          <option value="CPR">CONTROL PRESUPUESTAL</option>
+          <option value="AUD">AUDITORÍA</option>
+          <option value="PRD">PRODUCTOS</option>
+          <option value="PFI">PLANEACIÓN FINANCIERA</option>
+        </select>
+
+        <input type='button' 
+          id=''
+          className='btn-form' 
+          value='REGISTRAR NUEVO CANDIDATO'
+          onClick={registerCandidateBtn} 
+        />
         
+      </div>
+      <TableRecluter />
       </div>
       <SmallFooter />   
     </div> 
