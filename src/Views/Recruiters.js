@@ -55,27 +55,29 @@ const Recruiters = () => {
         <p className="welcomeUser-title">
 				  ¡Hola, Alexander!
 			  </p>
-        <div className="mainContainer">
-          <select
-            className ="selectFilter btn-form"
+        {/* <div className="mainContainer"> */}
+        <div className="buttonsRecruiters">
+          <div className="selectsRecluters">
+            <select
+              className ="btn-selectRecluter"
+              type="number"
+              onChange={(e) => {
+              setValue(e.target.value);
+            }}>
+              <option value="">FILTRAR POR STATUS</option>
+              <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
+              <option value="EVA">EVALUACIÓN</option>
+              <option value="ENT">ENTREVISTAS</option>
+              <option value="DOC">DOCUMENTACIÓN</option>
+              <option value="EXME">EXAMEN MÉDICO</option>
+              <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
+            </select>
+            <select
+            className ="btn-selectRecluter"
             type="number"
             onChange={(e) => {
             setValue(e.target.value);
-            }}>
-            <option value="">FILTRAR POR STATUS</option>
-            <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
-            <option value="EVA">EVALUACIÓN</option>
-            <option value="ENT">ENTREVISTAS</option>
-            <option value="DOC">DOCUMENTACIÓN</option>
-            <option value="EXME">EXAMEN MÉDICO</option>
-            <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
-          </select>
-          <select
-            className ="selectFilter btn-form"
-            type="number"
-            onChange={(e) => {
-            setValue(e.target.value);
-            }}>
+          }}>
             <option value="">FILTRAR POR VACANTE</option>
             <option value="BI">BUSSINESS INTELLIGENCE</option>
             <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
@@ -87,19 +89,22 @@ const Recruiters = () => {
             <option value="PRD">PRODUCTOS</option>
             <option value="PFI">PLANEACIÓN FINANCIERA</option>
           </select>
+          </div> 
           <input type='button' 
             id=''
-            className='btn-form' 
+            className='btn-formNewCandidate'
             value='REGISTRAR NUEVO CANDIDATO'
             onClick={registerCandidateBtn} 
-          />         
+          />
+          </div>          
           <div className="tableContainer">
             <TableRecluter />
           </div>
         </div>
        <SmallFooter />   
       </div> 
-    </div> 
+    
+    
   
   )
 }
