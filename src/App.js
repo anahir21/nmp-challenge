@@ -38,13 +38,13 @@ function App() {
 									/>}
 								/>
 								<Route exact path="/profile" component={UserProfile} />
-								<Route exact path="/signup" component={SignUp} />
 								<Route exact path="/recruiters" component={Recruiters} />
 								<Route exact path="/mock" component={MockView} />
 							</Fragment>
 							:
 							<Fragment>
 								<Route exact path="/" component={Login} />
+								<Route exact path="/signup" component={SignUp} />
 							</Fragment>
 						}
 					</Switch>
