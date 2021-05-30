@@ -3,9 +3,14 @@ import ShortHeader from '../Components/ShortHeader';
 import SmallFooter from '../Components/SmallFooter';
 import TableRecluter from '../Components/TableRecluter';
 // import WelcomeUser from '../Components/WelcomeUser';
+///Modal
+import openModal from '../Components/ModalFunction';
+import ModalPreSingup from '../Components/ModalPreSignup';
+
 import firebase from '../Firebase/firebase'
 import 'firebase/firestore'
 import '../Styles/RecruiterView.css'
+
 
 const db = firebase.firestore();
 
@@ -44,15 +49,15 @@ const Recruiters = () => {
   }, [])
 
   const registerCandidateBtn = () => {
-    console.log('Btn Register User');
-    }
+    openModal(ModalPreSingup);
+  }
   
 
   return (
     <div className='profile-container'>
       <ShortHeader />
       <div className='displayDataCandidates'>
-        <p className="welcomeUser-title">
+        <p>
 				  ¡Hola, Alexander!
 			  </p>
         {/* <div className="mainContainer"> */}

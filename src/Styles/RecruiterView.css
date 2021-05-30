@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap");
-p {
+.displayDataCandidates p {
   color: #891928;
   font-family: Roboto;
   font-size: 1.3em;

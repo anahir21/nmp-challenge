@@ -3,6 +3,10 @@ import React from "react";
 import './ModalInfoPostulant.css';
 import ImgIterview from "../Static/Images/icon2-computer-c.png";
 
+import openModal from '../Components/ModalFunction';
+import ModalAgenda from "../Components/ModalAgenda";
+
+
 function ModalInfoPostulant() {
 	const dialog = useDialog();
 	return (
@@ -22,7 +26,7 @@ function ModalInfoPostulant() {
 					<div>Entevista</div>
 				</div>
 				<div className="ip-buttons-container">
-					<button className="ip-modal-button">AGENDAR ENTREVISTA</button>
+					<button className="ip-modal-button" onClick={()=>openModal(ModalAgenda)}>AGENDAR ENTREVISTA</button>
 					<button className="ip-modal-button">FINALIZAR PROCESO</button>
 				</div>
 			</div>

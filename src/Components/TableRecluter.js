@@ -4,6 +4,9 @@ import '../Styles/TableRecluter.css'
 
 import Joya from "../assets/JoyaGray.png";
 
+import openModal from './ModalFunction';
+import ModalInfoPostulant from './ModalInfoPostulant';
+
 
 
 const changeImage = () => {
@@ -48,7 +51,7 @@ const UserTable = () => (
         <td>LINK ANA C.V.</td>
         <td>EN EVALUACIÓN</td>
         <td>
-          <button className="MyButton" onClick={console.log('Si sirvo, actualizo')}>ACTUALIZAR ESTADO</button>
+          <button className="MyButton" onClick={()=>openModal(ModalInfoPostulant)}>ACTUALIZAR ESTADO</button>
         </td>
       </tr>
     </tbody>
