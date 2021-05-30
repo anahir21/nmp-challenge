@@ -1,7 +1,24 @@
 import React from 'react'
+// import React, {useState}  from 'react'
 import '../Styles/TableRecluter.css'
 
-import Joya from "../assets/Joya.png";
+import Joya from "../assets/JoyaGray.png";
+
+
+
+const changeImage = () => {
+    if (document.getElementById("addFavorite").src == "../assets/JoyaGray.png") 
+    {
+        document.getElementById("addFavorite").src = "../assets/Joya.png";
+    }
+    else 
+    {
+        document.getElementById("addFavorite").src = "../assets/JoyaGray.png";
+    }
+    // const [image, setImages] = useState({});
+    //   setImages({clicked: true})
+    //   {document.getElementById("addFavorite").src = {'../assets/JoyaGray.png' : (setImages ? 'JoyaGray' : 'Joya') + '.png'}}
+  }
 
 const UserTable = () => (
   <table className='tableStyle'>
@@ -19,7 +36,11 @@ const UserTable = () => (
     </thead>
     <tbody>
       <tr>
-        <td><img alt="favorites" src={Joya} className="favorites" /></td>
+        <td><img alt="favorites" src={Joya} className="favorites" id="addFavorite" 
+        onClick={changeImage}
+        />
+        
+        </td>
         <td>Especialista de relaciones laborales</td>
         <td>Ana Martínez</td>
         <td>anamat@hotmail.com</td>
