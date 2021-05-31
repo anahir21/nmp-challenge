@@ -6,6 +6,8 @@ import { useHistory } from "react-router-dom";
 import loginBack from "../Static/Images/login-back.png";
 import ReCaptchaComponent from "./ReCaptcha";
 import { useToasts } from "react-toast-notifications";
+import openModal from '../Components/ModalFunction';
+import ModalPrivacy from '../Components/ModalPrivacy';
 
 const initialInputs = {
     email:'',
@@ -32,7 +34,7 @@ const info = async (e) =>{
         console.log('no registrado :c')
     })
 
- 
+
  const db = firebase.firestore();
  db.collection("candidates").doc().set({name, rfc, phone, email})
     
@@ -69,6 +71,11 @@ const { addToast } = useToasts();
 //   }
 // };
  
+
+const privacyModal = () => {
+  openModal(ModalPrivacy);
+}
+
 return (
   <div className="signUp-container">
     <img className="signUpbackImg" src={loginBack} alt="signUpbackImg" />
@@ -140,6 +147,28 @@ return (
                         */}
         </div>
       </div>
+      <div className="AvisoDePrivacidad">
+          <input
+            type="checkbox"
+            className="checkbox-politics"
+            id="politics"
+            value="true"
+            // onChange={politicsChecked}
+          />
+          <label for="politics" className="politics">
+            Acepto el Aviso Legal sobre Protección de Datos Personales y los{" "}
+            <a
+              target="_blanck"
+              // href="https://www.montepiedad.com.mx/legales-aviso-de-privacidad-empleo"
+              className="a-politics"
+              onClick={privacyModal}
+            >
+              <span>Términos y Condiciones </span>
+            </a>{" "}
+            de este concurso.
+          </label>
+        </div>
+
 
       <ReCaptchaComponent
         isVerified={isVerified}
