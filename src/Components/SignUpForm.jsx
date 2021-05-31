@@ -11,7 +11,8 @@ import ModalPrivacy from '../Components/ModalPrivacy';
 
 const initialInputs = {
     email:'',
-    password:''
+    password:'',
+
 }
 
 export const SignUpForm = () => {
@@ -20,19 +21,129 @@ export const SignUpForm = () => {
   const [phone, setPhone] = useState("");
   const [email, setEmail] = useState(initialInputs);
   const [password, setPassword] = useState(initialInputs); 
+  const [passwordConfirmed, setPasswordConfirmed] = useState(''); 
+  const [privacy, setPrivacy] = useState("");
   const history = useHistory();
-  
-const info = async (e) =>{
- e.preventDefault();
- const auth = firebase.auth();
- auth.createUserWithEmailAndPassword(email, password)
-    .then(()=>{
-        console.log('registrado')
-        history.pushState('./')
-    })
-    .catch(()=>{
-        console.log('no registrado :c')
-    })
+
+
+   
+    const info = async (e) =>{
+        e.preventDefault();
+        const psw = document.getElementById('loginPsw').value
+        const pswC = document.getElementById('loginPsw').value
+        if (psw !== pswC) {
+            
+        
+
+        }else if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
+            const auth = firebase.auth();
+            auth.createUserWithEmailAndPassword(email, password)
+               .then(()=>{
+                   console.log('registrado')
+                   history.pushState('./')
+               })
+               .catch(()=>{
+                    console.log('no registrado :c')
+                    // console.log(error);
+                    addToast("Lo siento, no hay un pre registro", {
+                        autoDismiss: true,
+                        placement: "top-right",
+                        appearance: "error",
+                     })
+               })
+        } else {
+            addToast(
+                "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+                {
+                  autoDismiss: true,
+                  placement: "top-right",
+                  appearance: "warning",
+                }
+              );
+        }
+
+// const info = async (e) =>{
+//     e.preventDefault();
+
+//     if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
+//         const auth = firebase.auth();
+//         auth.createUserWithEmailAndPassword(email, password)
+//            .then(()=>{
+//                 const psw = document.getElementById('loginPsw').value
+//                 const pswC = document.getElementById('loginPsw').value
+//                 if (psw !== pswC) {
+//                     console.log('Las contraseñas no coinciden')
+//                     // console.log(error);
+//                     addToast("Lo siento, las contraseñas no coinciden", {
+//                         autoDismiss: true,
+//                         placement: "top-right",
+//                         appearance: "error",
+//                     })
+//                 }else{
+//                     console.log('registrado')
+//                 history.pushState('./')
+//                 }
+                
+//            })
+//            .catch(()=>{
+//                 console.log('no registrado :c')
+//                 // console.log(error);
+//                 addToast("Lo siento, no hay un pre registro", {
+//                     autoDismiss: true,
+//                     placement: "top-right",
+//                     appearance: "error",
+//                  })
+//            })
+//     } else {
+//         addToast(
+//             "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+//             {
+//               autoDismiss: true,
+//               placement: "top-right",
+//               appearance: "warning",
+//             }
+//           );
+//     }
+    
+    // const info = async (e) =>{
+    //     e.preventDefault();
+    //     const psw = document.getElementById('loginPsw').value
+    //     const pswC = document.getElementById('loginPsw').value
+    //     if (psw !== pswC) {
+    //         console.log('Las contraseñas no coinciden')
+    //         // console.log(error);
+    //         addToast("Lo siento, las contraseñas no coinciden", {
+    //             autoDismiss: true,
+    //             placement: "top-right",
+    //             appearance: "error",
+    //          })
+    //     }else if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
+    //         const auth = firebase.auth();
+    //         auth.createUserWithEmailAndPassword(email, password)
+    //            .then(()=>{
+    //                console.log('registrado')
+    //                history.pushState('./')
+    //            })
+    //            .catch(()=>{
+    //                 console.log('no registrado :c')
+    //                 // console.log(error);
+    //                 addToast("Lo siento, no hay un pre registro", {
+    //                     autoDismiss: true,
+    //                     placement: "top-right",
+    //                     appearance: "error",
+    //                  })
+    //            })
+    //     } else {
+    //         addToast(
+    //             "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+    //             {
+    //               autoDismiss: true,
+    //               placement: "top-right",
+    //               appearance: "warning",
+    //             }
+    //           );
+    //     }
+        
 
 
  const db = firebase.firestore();
@@ -43,34 +154,6 @@ const info = async (e) =>{
 const [isVerified, setIsVerified] = useState(false);
 const { addToast } = useToasts();
 
-// const signUpBtn = () => {
-//   if (isVerified && email && password) {
-//     firebase
-//       .auth()
-//       .signInWithEmailAndPassword(email, password)
-//       .then(() => {
-//         history.push("/");
-//       })                                                                                          
-//       .catch(function (error) {
-//         console.log(error);
-//         addToast("Correo o contraseña incorrectos", {
-//           autoDismiss: true,
-//           placement: "top-right",
-//           appearance: "error",
-//         });
-//       });
-//   } else {
-//     addToast(
-//       "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
-//       {
-//         autoDismiss: true,
-//         placement: "top-right",
-//         appearance: "warning",
-//       }
-//     );
-//   }
-// };
- 
 
 const privacyModal = () => {
   openModal(ModalPrivacy);
@@ -92,7 +175,7 @@ return (
             <input
               type="text"
               id="signUpName"
-              name="nombre"
+              name="nombre"             
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -108,7 +191,7 @@ return (
           <div className="labelInputSgngUp">
             <label for="Telefono">Telefono</label>
             <input
-              type="number"
+              type="text"
               id="signUpnumber"
               phone=""
               onChange={(e) => setPhone(e.target.value)}
@@ -123,7 +206,7 @@ return (
               type="email"
               id="singUpUser"
               email=""
-              value={email.email}
+              //value={email.email}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -133,15 +216,20 @@ return (
               type="password"
               id="loginPsw"
               password=""
-              value={password.password}
+              //value={password.password}
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <div className="labelInputSgngUp">
             <label for="loginPswConfirmed">Confirma tu Contraseña</label>
-            <input type="password" id="loginPswConfirmed" />
+            <input 
+            type="password"
+            passwordConfirmed=""
+            id="loginPswConfirmed" 
+            onChange={(e) => setPasswordConfirmed(e.target.value)}
+            />
           </div>
-          {/* if (loginPsw !=== loginPswConfirmed) {
+          {/* if (loginPsw.value !=== loginPswConfirmed.value) {
                             <label> No coinciden las contraseñas</label>
                         }
                         */}
@@ -153,7 +241,8 @@ return (
             className="checkbox-politics"
             id="politics"
             value="true"
-            // onChange={politicsChecked}
+            privacy=""
+            onChange={(e) => setPrivacy(e.target.value)}
           />
           <label for="politics" className="politics">
             Acepto el Aviso Legal sobre Protección de Datos Personales y los{" "}
@@ -178,7 +267,7 @@ return (
       <input
         type="submit"
         className={
-          isVerified && email && password ? "btn-enabled" : "btn-disabled"
+          isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc  ? "btn-enabled" : "btn-disabled"
         }
         id="loginBtn"
         value="INGRESAR"
