@@ -13,19 +13,19 @@ function ModalPreSingup() {
 			}}>
 				<div className="sp-input-container">
 					<div className="ps-label-inpuForm">Nombre completo</div>
-					<input type="text" className="ps-form-input"/>
+					<input type="text" className="ps-form-input" required/>
 				</div>
 				<div className="sp-input-container">
 					<div className="ps-label-inpuForm">Correo electrónico</div>
-					<input type="email" className="ps-form-input"/>
+					<input type="email" className="ps-form-input" required/>
 				</div>
 				<div className="sp-input-container">
 					<div className="ps-label-inpuForm">RFC</div>
-					<input type="text" className="ps-form-input"/>
+					<input type="text" className="ps-form-input" required/>
 				</div>
 				<div className="sp-input-container">
 					<div className="ps-label-inpuForm">Vacante</div>
-					<select name="select" className="ps-form-select">
+					<select name="select" className="ps-form-select" required>
 					<option value="value1">Value 1</option>
 					<option value="value2" selected>Value 2</option>
 					<option value="value3">Value 3</option>
