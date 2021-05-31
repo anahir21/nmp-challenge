@@ -14,8 +14,7 @@ const getusers = (firestore) => firestore.collection('users').get();
 function App() {
 	const firestore = firebase.firestore();
 	const [isLogin, setIsLogin] = useState(false);
-	const [isRecruiter, setIsRecruiter] = useState(false);
-	const [isApplicant, setIsApplicant] = useState(false);
+	const [permissions, setPermissions] =useState('none')
 
 
 	const getpremissions = async (userMail) => {
@@ -23,12 +22,8 @@ function App() {
 		dataUsers.forEach(doc => {
 			if (userMail === doc.id) {
 				let permission = doc.data().permission;
-				if (permission === 'recruiter') {
-					setIsRecruiter(true);
-				} else if (permission === 'applicant') {
-					setIsApplicant(true);
+				setPermissions(permission);
 				}
-			}
 		});
 	}
 
@@ -38,8 +33,10 @@ function App() {
 				setIsLogin(true);
 				const credentialFirebase = firebase.auth().currentUser;
 				getpremissions(credentialFirebase.email);
+				console.log('holi crayoli');
 			} else {
 				setIsLogin(false);
+				setPermissions('none')
 				console.log('no user')
 			}
 		});
@@ -52,7 +49,7 @@ function App() {
 					<Switch>
 						{isLogin === true ?
 							<Fragment>
-								{isApplicant &&
+								{permissions === 'applicant' &&
 								<>
 								<Route exact path="/" render={() =>
 									<Welcome
@@ -62,9 +59,9 @@ function App() {
 								<Route exact path="/profile" component={UserProfile} />
 								</>
 								}
-								{isRecruiter &&
+								{permissions == 'recruiter' &&
 									<Fragment>
-									<Route exact path="/recruiters" component={Recruiters} />
+									<Route exact path="/" render={() =><Recruiters/>} />
 									<Route exact path="/mock" component={MockView} />
 									</Fragment>
 								}
