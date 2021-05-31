@@ -15,7 +15,7 @@ function ModalAgenda() {
 				<div className="ma-inputsForms-container">
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Entrevista:</div>
-						<select name="select" className="ma-form-select">
+						<select name="select" className="ma-form-select" required>
 							<option value="value1">Value 1</option>
 							<option value="value2" selected>Value 2</option>
 							<option value="value3">Value 3</option>
@@ -23,7 +23,7 @@ function ModalAgenda() {
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Cede:</div>
-						<select name="select" className="ma-form-select">
+						<select name="select" className="ma-form-select" required>
 							<option value="value1">Value 1</option>
 							<option value="value2" selected>Value 2</option>
 							<option value="value3">Value 3</option>
@@ -31,15 +31,15 @@ function ModalAgenda() {
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Fecha:</div>
-						<input type="date" className="ma-form-input" />
+						<input type="date" className="ma-form-input" required/>
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Hora:</div>
-						<input type="time" className="ma-form-input" />
+						<input type="time" className="ma-form-input" required/>
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Lugar:</div>
-						<select name="select" className="ma-form-select">
+						<select name="select" className="ma-form-select" required>
 							<option value="value1">Value 1</option>
 							<option value="value2" selected>Value 2</option>
 							<option value="value3">Value 3</option>
@@ -47,11 +47,11 @@ function ModalAgenda() {
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Enlace:</div>
-						<input type="text" className="ma-form-input" />
+						<input type="text" className="ma-form-input" required/>
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Entervistador:</div>
-						<select name="select" className="ma-form-select">
+						<select name="select" className="ma-form-select"  required>
 							<option value="value1">Value 1</option>
 							<option value="value2" selected>Value 2</option>
 							<option value="value3">Value 3</option>
@@ -59,11 +59,11 @@ function ModalAgenda() {
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Correo del entrevistador:</div>
-						<input type="mail" className="ma-form-input" />
+						<input type="mail" className="ma-form-input" required/>
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Teléfono del entrevistador:</div>
-						<input type="number" className="ma-form-input" />
+						<input type="number" className="ma-form-input" required/>
 					</div>
 					<div className="ma-input-container">
 						<div className="ma-label-inpuForm">Observaciones:</div>

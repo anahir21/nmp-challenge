@@ -26,7 +26,7 @@ function ModalPreSingup() {
         onSubmit={(e) => {
           e.preventDefault();
           sendInfo();
-		  dialog.close();  
+		      dialog.close();  
         }}
       >
         <div className="sp-input-container">
@@ -38,7 +38,8 @@ function ModalPreSingup() {
 		  type="text"
             id="psName"
             name="nombre"
-            onChange={(e) => setName(e.target.value)} />
+            onChange={(e) => setName(e.target.value)} 
+            required/>
         </div>
         <div className="sp-input-container">
           <div className="ps-label-inpuForm">Correo electrónico</div>
@@ -48,7 +49,8 @@ function ModalPreSingup() {
 		  id="singUpUser"
 		  email=""
 		  value={email.email}
-		  onChange={(e) => setEmail(e.target.value)} />
+		  onChange={(e) => setEmail(e.target.value)}
+      required/>
         </div>
         <div className="sp-input-container">
           <div className="ps-label-inpuForm">RFC</div>
@@ -57,11 +59,12 @@ function ModalPreSingup() {
 		  type="text"
 		  id="psRFC"
 		  rfc=""
-		  onChange={(e) => setRfc(e.target.value)} />
+		  onChange={(e) => setRfc(e.target.value)}
+      required/>
         </div>
         <div className="sp-input-container">
           <div className="ps-label-inpuForm">Vacante</div>
-          <select name="select" className="ps-form-select" onChange={(e) => setVacant(e.target.value)}>
+          <select name="select" className="ps-form-select" onChange={(e) => setVacant(e.target.value)} required>
 		  <option value="">SELECCIONAR VACANTE</option>
             <option value="BI">BUSSINESS INTELLIGENCE</option>
             <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
