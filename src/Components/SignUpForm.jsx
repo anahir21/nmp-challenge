@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Styles/signUpform.css";
 import firebase from "../Firebase/firebase";
 import "firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import loginBack from "../Static/Images/login-back.png";
 import ReCaptchaComponent from "./ReCaptcha";
 import { useToasts } from "react-toast-notifications";
@@ -36,41 +36,52 @@ export const SignUpForm = () => {
 
 
 	const info = async () => {
-		const psw = document.getElementById('loginPsw').value
-		const pswC = document.getElementById('loginPsw').value
-		if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc) {
-			console.log('holi')
-			db.collection('preSignUp').doc(email).get()
-				.then((res) => {
-				return res.data()
-				})
-				.then((res) => {
-					console.log(res, email, password);
-					auth.createUserWithEmailAndPassword(email, password)
-						.then(() => {
-							console.log('registrado')
-							db.collection("candidates").doc().set({ name, rfc, phone, email, 'recruiter': res.recruiter, status, cv, interviews, 'vacant': res.vacant })
-							db.collection("users").doc(email).set({ name, email, 'permission': 'applicant' });
-							db.collection('preSignUp').doc(email).delete();
-							history.pushState('./');
-						})
-						.catch(() => {
-							console.log('no registrado :c')
-						})
-				})
-				.catch((err) => {
-				console.log(err, 'no se encontró usuario')
-			})
-		} else {
+		if (password !== passwordConfirmed) {
 			addToast(
-				"Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+				"Las contraseñas no coinciden",
 				{
 					autoDismiss: true,
 					placement: "top-right",
 					appearance: "warning",
 				}
 			);
+		} else {
+			if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc) {
+				console.log('holi')
+				db.collection('preSignUp').doc(email).get()
+					.then((res) => {
+						return res.data()
+					})
+					.then((res) => {
+						console.log(res, email, password);
+						auth.createUserWithEmailAndPassword(email, password)
+							.then( () => {
+								console.log('registrado')
+								db.collection("candidates").doc().set({ name, rfc, phone, email, 'recruiter': res.recruiter, status, cv, interviews, 'vacant': res.vacant })
+								db.collection("users").doc(email).set({ name, email, 'permission': 'applicant' });
+								db.collection('preSignUp').doc(email).delete();
+								history.push('/')
+								// <Redirect to="/" />;
+							})
+							.catch(() => {
+								console.log('no registrado :c')
+							})
+					})
+					.catch((err) => {
+						console.log(err, 'no se encontró usuario')
+					})
+			} else {
+				addToast(
+					"Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+					{
+						autoDismiss: true,
+						placement: "top-right",
+						appearance: "warning",
+					}
+				);
+			}
 		}
+
 	}
 
 	const [isVerified, setIsVerified] = useState(false);
@@ -102,6 +113,7 @@ export const SignUpForm = () => {
 								type="text"
 								id="signUpName"
 								name="nombre"
+								placeholder="Nombre Completo"
 								onChange={(e) => setName(e.target.value)}
 								placeholder="Nombre Completo"
 							/>
@@ -112,6 +124,7 @@ export const SignUpForm = () => {
 								type="text"
 								id="signUpRFC"
 								rfc=""
+								placeholder="RFC"
 								onChange={(e) => setRfc(e.target.value)}
 								placeholder="RFC"
 							/>
@@ -122,6 +135,7 @@ export const SignUpForm = () => {
 								type="text"
 								id="signUpnumber"
 								phone=""
+								placeholder= "Teléfono (10 dígitos)"
 								onChange={(e) => setPhone(e.target.value)}
 								placeholder="Teléfono (10 dígitos)"
 							/>
@@ -136,6 +150,7 @@ export const SignUpForm = () => {
 								id="singUpUser"
 								email=""
 								//value={email.email}
+								placeholder= "Crea una contraseña"
 								onChange={(e) => setEmail(e.target.value)}
 								placeholder="Correo electrónico"
 							/>
@@ -147,6 +162,7 @@ export const SignUpForm = () => {
 								id="loginPsw"
 								password=""
 								//value={password.password}
+								placeholder= "Crea una contraseña"
 								onChange={(e) => setPassword(e.target.value)}
 								placeholder="Contraseña"
 							/>
@@ -157,6 +173,7 @@ export const SignUpForm = () => {
 								type="password"
 								passwordConfirmed=""
 								id="loginPswConfirmed"
+								placeholder= "Confirma tu contraseña"
 								onChange={(e) => setPasswordConfirmed(e.target.value)}
 								placeholder="Confirma contraseña"
 							/>

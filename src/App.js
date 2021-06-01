@@ -33,7 +33,7 @@ function App() {
 				setIsLogin(true);
 				const credentialFirebase = firebase.auth().currentUser;
 				getpremissions(credentialFirebase.email);
-				console.log('holi crayoli');
+				console.log('sesión iniciada');
 			} else {
 				setIsLogin(false);
 				setPermissions('none')
