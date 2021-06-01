@@ -103,6 +103,7 @@ export const SignUpForm = () => {
 								id="signUpName"
 								name="nombre"
 								onChange={(e) => setName(e.target.value)}
+								placeholder="Nombre Completo"
 							/>
 						</div>
 						<div className="labelInputSgngUp">
@@ -112,6 +113,7 @@ export const SignUpForm = () => {
 								id="signUpRFC"
 								rfc=""
 								onChange={(e) => setRfc(e.target.value)}
+								placeholder="RFC"
 							/>
 						</div>
 						<div className="labelInputSgngUp">
@@ -121,6 +123,7 @@ export const SignUpForm = () => {
 								id="signUpnumber"
 								phone=""
 								onChange={(e) => setPhone(e.target.value)}
+								placeholder="Teléfono (10 dígitos)"
 							/>
 						</div>
 					</div>
@@ -134,6 +137,7 @@ export const SignUpForm = () => {
 								email=""
 								//value={email.email}
 								onChange={(e) => setEmail(e.target.value)}
+								placeholder="Correo electrónico"
 							/>
 						</div>
 						<div className="labelInputSgngUp">
@@ -144,6 +148,7 @@ export const SignUpForm = () => {
 								password=""
 								//value={password.password}
 								onChange={(e) => setPassword(e.target.value)}
+								placeholder="Contraseña"
 							/>
 						</div>
 						<div className="labelInputSgngUp">
@@ -153,6 +158,7 @@ export const SignUpForm = () => {
 								passwordConfirmed=""
 								id="loginPswConfirmed"
 								onChange={(e) => setPasswordConfirmed(e.target.value)}
+								placeholder="Confirma contraseña"
 							/>
 						</div>
 						{/* if (loginPsw.value !=== loginPswConfirmed.value) {
