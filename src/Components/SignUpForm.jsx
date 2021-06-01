@@ -9,33 +9,36 @@ import { useToasts } from "react-toast-notifications";
 import openModal from '../Components/ModalFunction';
 import ModalPrivacy from '../Components/ModalPrivacy';
 
-const initialInputs = {
-    email:'',
-    password:'',
+// const initialInputs = {
+//     email:'',
+//     password:'',
 
-}
+// }
 
 export const SignUpForm = () => {
   const [name, setName] = useState("");
   const [rfc, setRfc] = useState("");
   const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState(initialInputs);
-  const [password, setPassword] = useState(initialInputs); 
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState(''); 
+//   const [email, setEmail] = useState(initialInputs);
+//   const [password, setPassword] = useState(initialInputs); 
   const [passwordConfirmed, setPasswordConfirmed] = useState(''); 
   const [privacy, setPrivacy] = useState("");
   const history = useHistory();
+  const [isError, setIsError] =useState("");
 
-
-   
-    const info = async (e) =>{
+const passwordChecked = (e) => {
+    setPasswordConfirmed(e.target.value);
+    if (password != passwordConfirmed) {
+        setIsError("Please confirm your password");
+    } else {
+        setIsError("");
+    
+}
+     const info = async (e) =>{
         e.preventDefault();
-        const psw = document.getElementById('loginPsw').value
-        const pswC = document.getElementById('loginPsw').value
-        if (psw !== pswC) {
-            
-        
-
-        }else if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
+        if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
             const auth = firebase.auth();
             auth.createUserWithEmailAndPassword(email, password)
                .then(()=>{
@@ -175,7 +178,8 @@ return (
             <input
               type="text"
               id="signUpName"
-              name="nombre"             
+            //   name="nombre"            
+              placeholder= "Nombre completo" 
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -184,7 +188,8 @@ return (
             <input
               type="text"
               id="signUpRFC"
-              rfc=""
+            //   rfc=""
+              placeholder= "RFC"
               onChange={(e) => setRfc(e.target.value)}
             />
           </div>
@@ -193,7 +198,8 @@ return (
             <input
               type="text"
               id="signUpnumber"
-              phone=""
+            //   phone=""
+              placeholder= "Teléfono (10 dígitos)"
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
@@ -205,7 +211,8 @@ return (
             <input
               type="email"
               id="singUpUser"
-              email=""
+            //   email=""
+              placeholder= "Correo electrónico"
               //value={email.email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -215,8 +222,9 @@ return (
             <input
               type="password"
               id="loginPsw"
-              password=""
-              //value={password.password}
+            //   password=""
+              value={password}
+              placeholder= "Crea una contraseña"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
@@ -224,10 +232,14 @@ return (
             <label for="loginPswConfirmed">Confirma tu Contraseña</label>
             <input 
             type="password"
-            passwordConfirmed=""
-            id="loginPswConfirmed" 
-            onChange={(e) => setPasswordConfirmed(e.target.value)}
+            // passwordConfirmed=""
+            id="loginPswConfirmed"
+            value ={passwordConfirmed} 
+            placeholder= "Confirma tu contraseña"
+            onChange={(e) => passwordChecked(e)}
+           
             />
+            <span>{isError}</span>
           </div>
           {/* if (loginPsw.value !=== loginPswConfirmed.value) {
                             <label> No coinciden las contraseñas</label>
@@ -241,7 +253,7 @@ return (
             className="checkbox-politics"
             id="politics"
             value="true"
-            privacy=""
+            // privacy=""
             onChange={(e) => setPrivacy(e.target.value)}
           />
           <label for="politics" className="politics">
@@ -280,5 +292,5 @@ return (
 };
 
 
-
+}
 export default SignUpForm;
