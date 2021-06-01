@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../Styles/signUpform.css";
 import firebase from "../Firebase/firebase";
 import "firebase/firestore";
-import { useHistory } from "react-router-dom";
+import { useHistory, Redirect } from "react-router-dom";
 import loginBack from "../Static/Images/login-back.png";
 import ReCaptchaComponent from "./ReCaptcha";
 import { useToasts } from "react-toast-notifications";
@@ -55,12 +55,13 @@ export const SignUpForm = () => {
 					.then((res) => {
 						console.log(res, email, password);
 						auth.createUserWithEmailAndPassword(email, password)
-							.then(async () => {
+							.then( () => {
 								console.log('registrado')
 								db.collection("candidates").doc().set({ name, rfc, phone, email, 'recruiter': res.recruiter, status, cv, interviews, 'vacant': res.vacant })
 								db.collection("users").doc(email).set({ name, email, 'permission': 'applicant' });
 								db.collection('preSignUp').doc(email).delete();
-								history.pushState('./');
+								history.push('/')
+								// <Redirect to="/" />;
 							})
 							.catch(() => {
 								console.log('no registrado :c')
