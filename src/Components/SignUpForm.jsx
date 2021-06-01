@@ -10,273 +10,198 @@ import openModal from '../Components/ModalFunction';
 import ModalPrivacy from '../Components/ModalPrivacy';
 
 const initialInputs = {
-    email:'',
-    password:'',
+	email: '',
+	password: '',
 
 }
 
 export const SignUpForm = () => {
-  const [name, setName] = useState("");
-  const [rfc, setRfc] = useState("");
-  const [phone, setPhone] = useState("");
-  const [email, setEmail] = useState(initialInputs);
-  const [password, setPassword] = useState(initialInputs); 
-  const [passwordConfirmed, setPasswordConfirmed] = useState(''); 
-  const [privacy, setPrivacy] = useState("");
-  const history = useHistory();
+	const auth = firebase.auth();
+	const db = firebase.firestore();
+	const history = useHistory();
+
+	const [name, setName] = useState("");
+	const [rfc, setRfc] = useState("");
+	const [phone, setPhone] = useState("");
+	const [email, setEmail] = useState(initialInputs);
+	const [password, setPassword] = useState(initialInputs);
+	const [passwordConfirmed, setPasswordConfirmed] = useState('');
+	const [privacy, setPrivacy] = useState("");
+
+	const [idPreSign, setIdPreSign] = useState('');
+	const status = 'initial';
+	const cv = 'none';
+	const interviews = [];
 
 
-   
-    const info = async (e) =>{
-        e.preventDefault();
-        const psw = document.getElementById('loginPsw').value
-        const pswC = document.getElementById('loginPsw').value
-        if (psw !== pswC) {
-            
-        
 
-        }else if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
-            const auth = firebase.auth();
-            auth.createUserWithEmailAndPassword(email, password)
-               .then(()=>{
-                   console.log('registrado')
-                   history.pushState('./')
-               })
-               .catch(()=>{
-                    console.log('no registrado :c')
-                    // console.log(error);
-                    addToast("Lo siento, no hay un pre registro", {
-                        autoDismiss: true,
-                        placement: "top-right",
-                        appearance: "error",
-                     })
-               })
-        } else {
-            addToast(
-                "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
-                {
-                  autoDismiss: true,
-                  placement: "top-right",
-                  appearance: "warning",
-                }
-              );
-        }
+	const info = async () => {
+		const psw = document.getElementById('loginPsw').value
+		const pswC = document.getElementById('loginPsw').value
+		if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc) {
+			console.log('holi')
+			db.collection('preSignUp').doc(email).get()
+				.then((res) => {
+				return res.data()
+				})
+				.then((res) => {
+					console.log(res, email, password);
+					auth.createUserWithEmailAndPassword(email, password)
+						.then(() => {
+							console.log('registrado')
+							db.collection("candidates").doc().set({ name, rfc, phone, email, 'recruiter': res.recruiter, status, cv, interviews, 'vacant': res.vacant })
+							db.collection("users").doc(email).set({ name, email, 'permission': 'applicant' });
+							db.collection('preSignUp').doc(email).delete();
+							history.pushState('./');
+						})
+						.catch(() => {
+							console.log('no registrado :c')
+						})
+				})
+				.catch((err) => {
+				console.log(err, 'no se encontró usuario')
+			})
+		} else {
+			addToast(
+				"Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
+				{
+					autoDismiss: true,
+					placement: "top-right",
+					appearance: "warning",
+				}
+			);
+		}
+	}
 
-// const info = async (e) =>{
-//     e.preventDefault();
-
-//     if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
-//         const auth = firebase.auth();
-//         auth.createUserWithEmailAndPassword(email, password)
-//            .then(()=>{
-//                 const psw = document.getElementById('loginPsw').value
-//                 const pswC = document.getElementById('loginPsw').value
-//                 if (psw !== pswC) {
-//                     console.log('Las contraseñas no coinciden')
-//                     // console.log(error);
-//                     addToast("Lo siento, las contraseñas no coinciden", {
-//                         autoDismiss: true,
-//                         placement: "top-right",
-//                         appearance: "error",
-//                     })
-//                 }else{
-//                     console.log('registrado')
-//                 history.pushState('./')
-//                 }
-                
-//            })
-//            .catch(()=>{
-//                 console.log('no registrado :c')
-//                 // console.log(error);
-//                 addToast("Lo siento, no hay un pre registro", {
-//                     autoDismiss: true,
-//                     placement: "top-right",
-//                     appearance: "error",
-//                  })
-//            })
-//     } else {
-//         addToast(
-//             "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
-//             {
-//               autoDismiss: true,
-//               placement: "top-right",
-//               appearance: "warning",
-//             }
-//           );
-//     }
-    
-    // const info = async (e) =>{
-    //     e.preventDefault();
-    //     const psw = document.getElementById('loginPsw').value
-    //     const pswC = document.getElementById('loginPsw').value
-    //     if (psw !== pswC) {
-    //         console.log('Las contraseñas no coinciden')
-    //         // console.log(error);
-    //         addToast("Lo siento, las contraseñas no coinciden", {
-    //             autoDismiss: true,
-    //             placement: "top-right",
-    //             appearance: "error",
-    //          })
-    //     }else if (isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc){
-    //         const auth = firebase.auth();
-    //         auth.createUserWithEmailAndPassword(email, password)
-    //            .then(()=>{
-    //                console.log('registrado')
-    //                history.pushState('./')
-    //            })
-    //            .catch(()=>{
-    //                 console.log('no registrado :c')
-    //                 // console.log(error);
-    //                 addToast("Lo siento, no hay un pre registro", {
-    //                     autoDismiss: true,
-    //                     placement: "top-right",
-    //                     appearance: "error",
-    //                  })
-    //            })
-    //     } else {
-    //         addToast(
-    //             "Ingresa tu correo y contraseña, y muéstranos que no eres un robot",
-    //             {
-    //               autoDismiss: true,
-    //               placement: "top-right",
-    //               appearance: "warning",
-    //             }
-    //           );
-    //     }
-        
+	const [isVerified, setIsVerified] = useState(false);
+	const { addToast } = useToasts();
 
 
- const db = firebase.firestore();
- db.collection("candidates").doc().set({name, rfc, phone, email})
-    
-}
+	const privacyModal = () => {
+		openModal(ModalPrivacy);
+	}
 
-const [isVerified, setIsVerified] = useState(false);
-const { addToast } = useToasts();
+	return (
+		<div className="signUp-container">
+			<img className="signUpbackImg" src={loginBack} alt="signUpbackImg" />
 
+			<form className="signUp-form-container" onSubmit={(e) => {
+				e.preventDefault()
+				info()
+				console.log('hola')
+			}}>
+				<p>Registro de Postulantes</p>
 
-const privacyModal = () => {
-  openModal(ModalPrivacy);
-}
-
-return (
-  <div className="signUp-container">
-    <img className="signUpbackImg" src={loginBack} alt="signUpbackImg" />
-
-    <form className="signUp-form-container">
-      <p>Registro de Postulantes</p>
-
-      <div id="signUp-form-container-w">
-        <div className="formLR">
-          <div className="labelInputSgngUp">
-            <label className="namee" for="signUpName">
-              Nombre
+				<div id="signUp-form-container-w">
+					<div className="formLR">
+						<div className="labelInputSgngUp">
+							<label className="namee" for="signUpName">
+								Nombre
             </label>
-            <input
-              type="text"
-              id="signUpName"
-              name="nombre"             
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
-          <div className="labelInputSgngUp">
-            <label for="RFC">RFC</label>
-            <input
-              type="text"
-              id="signUpRFC"
-              rfc=""
-              onChange={(e) => setRfc(e.target.value)}
-            />
-          </div>
-          <div className="labelInputSgngUp">
-            <label for="Telefono">Telefono</label>
-            <input
-              type="text"
-              id="signUpnumber"
-              phone=""
-              onChange={(e) => setPhone(e.target.value)}
-            />
-          </div>
-        </div>
+							<input
+								type="text"
+								id="signUpName"
+								name="nombre"
+								onChange={(e) => setName(e.target.value)}
+							/>
+						</div>
+						<div className="labelInputSgngUp">
+							<label for="RFC">RFC</label>
+							<input
+								type="text"
+								id="signUpRFC"
+								rfc=""
+								onChange={(e) => setRfc(e.target.value)}
+							/>
+						</div>
+						<div className="labelInputSgngUp">
+							<label for="Telefono">Telefono</label>
+							<input
+								type="text"
+								id="signUpnumber"
+								phone=""
+								onChange={(e) => setPhone(e.target.value)}
+							/>
+						</div>
+					</div>
 
-        <div className="formLR">
-          <div className="labelInputSgngUp">
-            <label for="loginUser">Correo electrónico</label>
-            <input
-              type="email"
-              id="singUpUser"
-              email=""
-              //value={email.email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="labelInputSgngUp">
-            <label for="loginPsw">Contraseña</label>
-            <input
-              type="password"
-              id="loginPsw"
-              password=""
-              //value={password.password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </div>
-          <div className="labelInputSgngUp">
-            <label for="loginPswConfirmed">Confirma tu Contraseña</label>
-            <input 
-            type="password"
-            passwordConfirmed=""
-            id="loginPswConfirmed" 
-            onChange={(e) => setPasswordConfirmed(e.target.value)}
-            />
-          </div>
-          {/* if (loginPsw.value !=== loginPswConfirmed.value) {
+					<div className="formLR">
+						<div className="labelInputSgngUp">
+							<label for="loginUser">Correo electrónico</label>
+							<input
+								type="email"
+								id="singUpUser"
+								email=""
+								//value={email.email}
+								onChange={(e) => setEmail(e.target.value)}
+							/>
+						</div>
+						<div className="labelInputSgngUp">
+							<label for="loginPsw">Contraseña</label>
+							<input
+								type="password"
+								id="loginPsw"
+								password=""
+								//value={password.password}
+								onChange={(e) => setPassword(e.target.value)}
+							/>
+						</div>
+						<div className="labelInputSgngUp">
+							<label for="loginPswConfirmed">Confirma tu Contraseña</label>
+							<input
+								type="password"
+								passwordConfirmed=""
+								id="loginPswConfirmed"
+								onChange={(e) => setPasswordConfirmed(e.target.value)}
+							/>
+						</div>
+						{/* if (loginPsw.value !=== loginPswConfirmed.value) {
                             <label> No coinciden las contraseñas</label>
                         }
                         */}
-        </div>
-      </div>
-      <div className="AvisoDePrivacidad">
-          <input
-            type="checkbox"
-            className="checkbox-politics"
-            id="politics"
-            value="true"
-            privacy=""
-            onChange={(e) => setPrivacy(e.target.value)}
-          />
-          <label for="politics" className="politics">
-            Acepto el Aviso Legal sobre Protección de Datos Personales y los{" "}
-            <a
-              target="_blanck"
-              // href="https://www.montepiedad.com.mx/legales-aviso-de-privacidad-empleo"
-              className="a-politics"
-              onClick={privacyModal}
-            >
-              <span>Términos y Condiciones </span>
-            </a>{" "}
+					</div>
+				</div>
+				<div className="AvisoDePrivacidad">
+					<input
+						type="checkbox"
+						className="checkbox-politics"
+						id="politics"
+						value="true"
+						privacy=""
+						onChange={(e) => setPrivacy(e.target.value)}
+					/>
+					<label for="politics" className="politics">
+						Acepto el Aviso Legal sobre Protección de Datos Personales y los{" "}
+						<a
+							target="_blanck"
+							// href="https://www.montepiedad.com.mx/legales-aviso-de-privacidad-empleo"
+							className="a-politics"
+							onClick={privacyModal}
+						>
+							<span>Términos y Condiciones </span>
+						</a>{" "}
             de este concurso.
           </label>
-        </div>
+				</div>
 
 
-      <ReCaptchaComponent
-        isVerified={isVerified}
-        setIsVerified={setIsVerified}
-      />
+				<ReCaptchaComponent
+					isVerified={isVerified}
+					setIsVerified={setIsVerified}
+				/>
 
-      <input
-        type="submit"
-        className={
-          isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc  ? "btn-enabled" : "btn-disabled"
-        }
-        id="loginBtn"
-        value="INGRESAR"
-        onClick={info}
-      />
-      <div className="AvisoDePrivacidad"></div>
-    </form>
-  </div>
-);
+				<input
+					type="submit"
+					className={
+						isVerified && name && email && password && passwordConfirmed && privacy && phone && rfc ? "btn-enabled" : "btn-disabled"
+					}
+					id="loginBtn"
+					value="INGRESAR"
+				/>
+				<div className="AvisoDePrivacidad"></div>
+			</form>
+		</div>
+	);
 };
 
 
