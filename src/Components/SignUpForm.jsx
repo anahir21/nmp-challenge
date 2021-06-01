@@ -32,9 +32,10 @@ const passwordChecked = (e) => {
     setPasswordConfirmed(e.target.value);
     if (password != passwordConfirmed) {
         setIsError("Please confirm your password");
-    } else {
-        setIsError("");
-    
+    } else {   
+        setIsError(" ");
+    }
+
 }
      const info = async (e) =>{
         e.preventDefault();
@@ -241,10 +242,7 @@ return (
             />
             <span>{isError}</span>
           </div>
-          {/* if (loginPsw.value !=== loginPswConfirmed.value) {
-                            <label> No coinciden las contraseñas</label>
-                        }
-                        */}
+          
         </div>
       </div>
       <div className="AvisoDePrivacidad">
@@ -292,5 +290,5 @@ return (
 };
 
 
-}
+
 export default SignUpForm;
