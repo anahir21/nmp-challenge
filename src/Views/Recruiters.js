@@ -3,6 +3,7 @@ import ShortHeader from '../Components/ShortHeader';
 import SmallFooter from '../Components/SmallFooter';
 import TableRecluter from '../Components/TableRecluter';
 import FilterVacants from '../Components/FilterVacants';
+import FilterStatus from '../Components/FilterStatus';
 
 import openModal from '../Components/ModalFunction';
 import ModalPreSingup from '../Components/ModalPreSignup';
@@ -22,7 +23,7 @@ const Recruiters = () => {
   const [allData, setAllData] = useState([]);
   
 
-  const datas = () => {db.collection('candidates').onSnapshot((querySnapshot)=> {
+  const datas = () => {db.collection('candidates').orderBy('status').onSnapshot((querySnapshot)=> {
     const docs = [];
     querySnapshot.forEach(async(doc) => {
        docs.push({ ...doc.data() });
@@ -81,20 +82,7 @@ const Recruiters = () => {
         {/* <div className="mainContainer"> */}
         <div className="buttonsRecruiters">
           <div className="selectsRecluters">
-            <select
-              className ="btn-selectRecluter"
-              type="number"
-              onChange={(e) => {
-              setValue(e.target.value);
-              }}>
-              <option value="">FILTRAR POR STATUS</option>
-              <option value="EVA">EVALUACIÓN</option>
-              <option value="ENT">ENTREVISTAS</option>
-              <option value="DOC">DOCUMENTACIÓN</option>
-              <option value="EXME">EXAMEN MÉDICO</option>
-              <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
-            </select>
-            
+            <FilterStatus postulants= {postulants} setPostulants = {setPostulants} allData = {allData}/>
             <FilterVacants postulants= {postulants} setPostulants = {setPostulants} allData = {allData}/>
             
           </div> 
