@@ -2,7 +2,7 @@ import React from 'react'
 import '../Styles/TableRecluter.css'
 import Candidates from './Candidates';
 
-const UserTable = () => {
+const UserTable = (props) => {
 
   return(
     <table className='tableStyle'>
@@ -19,7 +19,7 @@ const UserTable = () => {
         </tr>
       </thead>
       <tbody>
-        <Candidates />
+        <Candidates postulants= {props.postulants}/>
       </tbody>
     </table>
     

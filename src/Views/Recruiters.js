@@ -2,8 +2,8 @@ import React, {useEffect, useState}  from 'react'
 import ShortHeader from '../Components/ShortHeader';
 import SmallFooter from '../Components/SmallFooter';
 import TableRecluter from '../Components/TableRecluter';
-// import WelcomeUser from '../Components/WelcomeUser';
-///Modal
+import FilterVacants from '../Components/FilterVacants';
+
 import openModal from '../Components/ModalFunction';
 import ModalPreSingup from '../Components/ModalPreSignup';
 
@@ -18,10 +18,29 @@ const Recruiters = () => {
   const [user, setUser] = useState({});
   const [recruiter, setRecruiter] = useState({})
   const [value, setValue] = useState();
+  const [postulants, setPostulants] = useState([]);
+  const [allData, setAllData] = useState([]);
+  
+
+  const datas = () => {db.collection('candidates').onSnapshot((querySnapshot)=> {
+    const docs = [];
+    querySnapshot.forEach(async(doc) => {
+       docs.push({ ...doc.data() });
+    })
+    setAllData(docs);
+    setPostulants(docs);
+    })
+  }
+
+  useEffect(() =>{
+    datas();
+  }, []);
   
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
+
+ 
 
   useEffect(() => {
     const user = firebase.auth().currentUser;
@@ -31,12 +50,10 @@ const Recruiters = () => {
         db.collection("users").where("UID", "==", user.uid).get()
         .then((querySnapshot)=> {
           querySnapshot.forEach((doc) => {
-            console.log(doc.id, " => ", doc.data());
             setUser(doc.data())
             db.collection("recruiters").where("id", "==", doc.data().recruiterID).get()
             .then((querySnapshot)=> {
               querySnapshot.forEach((doc) => {
-                console.log(doc.id, " => ", doc.data());
                 setRecruiter(doc.data())
               })
             })      
@@ -48,10 +65,11 @@ const Recruiters = () => {
     }
   }, [])
 
+
   const registerCandidateBtn = () => {
     openModal(ModalPreSingup);
   }
-  
+
 
   return (
     <div className='profile-container'>
@@ -68,32 +86,17 @@ const Recruiters = () => {
               type="number"
               onChange={(e) => {
               setValue(e.target.value);
-            }}>
+              }}>
               <option value="">FILTRAR POR STATUS</option>
-              <option value="SE">CV Y SOLICITUD DE EMPLEO</option>
               <option value="EVA">EVALUACIÓN</option>
               <option value="ENT">ENTREVISTAS</option>
               <option value="DOC">DOCUMENTACIÓN</option>
               <option value="EXME">EXAMEN MÉDICO</option>
               <option value="ESOE">ESTUDIO SOCIO-ECONÓMICO</option>
             </select>
-            <select
-            className ="btn-selectRecluter"
-            type="number"
-            onChange={(e) => {
-            setValue(e.target.value);
-          }}>
-            <option value="">FILTRAR POR VACANTE</option>
-            <option value="BI">BUSSINESS INTELLIGENCE</option>
-            <option value="TI">TECNOLOGÍA DE LA INF./SISTEMAS</option>
-            <option value="EC">ESTRATEGÍA COMERCIAL</option>
-            <option value="OPP">OPERACIÓN PRENDARIA</option>
-            <option value="SEG">SERVICIOS GENERALES</option>
-            <option value="CPR">CONTROL PRESUPUESTAL</option>
-            <option value="AUD">AUDITORÍA</option>
-            <option value="PRD">PRODUCTOS</option>
-            <option value="PFI">PLANEACIÓN FINANCIERA</option>
-          </select>
+            
+            <FilterVacants postulants= {postulants} setPostulants = {setPostulants} allData = {allData}/>
+            
           </div> 
           <input type='button' 
             id=''
@@ -103,7 +106,7 @@ const Recruiters = () => {
           />
           </div>          
           <div className="tableContainer">
-            <TableRecluter />
+            <TableRecluter postulants= {postulants}/>
           </div>
         </div>
        <SmallFooter />   
