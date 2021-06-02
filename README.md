@@ -1,6 +1,5 @@
 # Nacional Monte de Piedad.
 
-<img src="https://github.com/DorsD/nmp-challenge/blob/master/public/Infography%201.png">
-<img src="https://github.com/DorsD/nmp-challenge/blob/master/public/Infography%202.png">
+<img width="80%" src="https://github.com/DenisseSantana/nmp-challenge/blob/pagination2/src/assets/toread.png">
 
-**Proyecto elaborado por Fabiola González, Rosa Isela López, Etna Sánchez y Andrea Aguilar.**
+**El Proyecto fué elaborado por Ana Martínez, Anahí Rosas, Denisse Santana, Ilse Moreno, Laura Beltran y Miriam Nava.**
