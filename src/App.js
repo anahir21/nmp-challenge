@@ -14,7 +14,8 @@ const getusers = (firestore) => firestore.collection('users').get();
 function App() {
 	const firestore = firebase.firestore();
 	const [isLogin, setIsLogin] = useState(false);
-	const [permissions, setPermissions] =useState('none')
+	const [permissions, setPermissions] =useState('none');
+	const [userName, setUserName] = useState();
 
 
 	const getpremissions = async (userMail) => {
@@ -34,6 +35,12 @@ function App() {
 				const credentialFirebase = firebase.auth().currentUser;
 				getpremissions(credentialFirebase.email);
 				console.log('sesión iniciada');
+				firestore.collection('users').doc(credentialFirebase.email).get()
+					.then((res) => {
+						let recruiterName = res.data().name;
+						return recruiterName;
+					})
+					.then((name) => setUserName(name))
 			} else {
 				setIsLogin(false);
 				setPermissions('none')
@@ -61,8 +68,11 @@ function App() {
 								}
 								{permissions == 'recruiter' &&
 									<Fragment>
-									<Route exact path="/" render={() =><Recruiters/>} />
-									<Route exact path="/mock" component={MockView} />
+									<Route exact path="/" render={() =>
+									<Recruiters
+										userName={userName}
+									/>} />
+									<Route exact path="/mock" component={MockView} /> 
 									</Fragment>
 								}
 								

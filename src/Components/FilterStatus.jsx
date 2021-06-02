@@ -14,6 +14,8 @@ const FilterStatus = (props) => {
     return (
       <>
         <select
+					id='selectStatus'
+					onClick={()=>document.getElementById('selectVacant').selectedIndex = 0}
           className ="btn-selectRecluter"
           type="number"
           onChange={(e) => {
