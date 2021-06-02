@@ -62,6 +62,36 @@
     background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
 }
 
+.tableContainer{
+    display: flex;
+    justify-content: center; 
+    flex-direction: column;
+}
+
+.pagination{
+    display: flex;
+    justify-content: center; 
+    flex-direction: row;
+    margin: 3%;
+}
+
+.btn-page {
+    height: 41px;
+    width: 230px;
+    border: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    color: #ffffff;
+    font-size: 17px;
+    padding: 0 10px;
+    margin-top: 2rem;
+    background: -webkit-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+    background: -o-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+    background: -moz-linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+    background: linear-gradient(-90deg, #EB403C, #C9003C, #98002E);
+}
+
+
+
 
 // .btn-form-short {
 // font-family: "Roboto Condensed", sans-serif;

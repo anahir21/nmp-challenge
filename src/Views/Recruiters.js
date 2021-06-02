@@ -10,14 +10,109 @@ import ModalPreSingup from '../Components/ModalPreSignup';
 import firebase from '../Firebase/firebase'
 import 'firebase/firestore'
 import '../Styles/RecruiterView.css'
+import { database } from 'firebase';
+import {usePagination} from "use-pagination-firestore";
 
-
-const db = firebase.firestore();
 
 const Recruiters = () => {
+
+ 
+  const db = firebase.firestore();
+const candidatesRef = db.collection('candidates');
+
   const [user, setUser] = useState({});
   const [recruiter, setRecruiter] = useState({})
   const [value, setValue] = useState();
+  const [postulants, setPostulants] = useState([]); //MIRI
+  const [smallData, setSmallData] =useState()
+
+  const datas = () => {candidatesRef.limit(10).orderBy('status').onSnapshot((querySnapshot)=> {//MIRI
+    const docs = [];
+    querySnapshot.forEach(async(doc) => {
+       docs.push({ ...doc.data() });
+    })
+    setPostulants(docs);
+    // getItems(docs);
+    console.log(docs, 'datos');
+  })
+}
+
+// const datas = () => {
+//   const {
+//     items,
+//     //isLoading,
+//     isStart,
+//     isEnd,
+//     getPrev,
+//     getNext,
+// } = usePagination<Candidate>(
+//   candidatesRef.limit(10).orderBy('status').onSnapshot((querySnapshot)=> {//MIRI
+//   const docs = [];
+//   items.querySnapshot.forEach(async(doc) => {
+//      docs.push({ ...doc.data() });
+//   })
+//   setPostulants(docs);
+//   // getItems(docs);
+//   console.log(docs, 'datos');
+// })
+// );
+// }
+
+
+// const getItems= (docs)=>{
+//   console.log('postulansDaa',docs)
+//   const query = candidatesRef
+//                     .orderBy('state')
+//      query.limit(10).get().then(snap => {
+//            firstDocument = snap.docs[ 0 ] || null;
+//            console.log(firstDocument, 'hoooolllaaaa')
+//           setSmallData(firstDocument)
+//     })
+//   }
+
+  // const {
+  //       items,
+  //       isLoading,
+  //       isStart,
+  //       isEnd,
+  //       getPrev,
+  //       getNext,
+  //   } = usePagination<Candidate>(
+  //       firebase
+  //           .firestore()
+  //           .collection("candidates")
+  //           .orderBy("state"),
+  //       {
+  //           limit: 10
+  //       }
+  //   );
+    
+  //   if (isLoading) {
+  //       return <h1>Cargando...</h1>;
+  //   }
+
+
+
+// let lastDocument = null;
+//   const NextPage = () => {
+//     // console.log('Siguiente pag.')
+//      const query = candidatesRef
+//                     .orderBy('state')
+//                     .startAfter( lastDocument )
+//      query.limit(10).get().then(snap => {
+//            firstDocument = snap.docs[ 0 ] || null;
+//            lastDocument = snap.docs[ snap.docs.length -1] || null;
+//            TableRecluter(snap); 
+//            console.log('Si llegue')       
+//      })              
+//   }
+
+  useEffect(() =>{
+    datas();
+  }, []);//MIRI
+
+  console.log(datas, 'soy data miri')//MIRI
+
   
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -52,6 +147,38 @@ const Recruiters = () => {
     openModal(ModalPreSingup);
   }
   
+  // let lastDocument = null;
+  // const NextPage = () => {
+  //   // console.log('Siguiente pag.')
+  //    const query = candidatesRef
+  //                   .orderBy('state')
+  //                   .startAfter( lastDocument )
+  //    query.limit(10).get().then(snap => {
+  //          firstDocument = snap.docs[ 0 ] || null;
+  //          lastDocument = snap.docs[ snap.docs.length -1] || null;
+  //          TableRecluter(snap); 
+  //          console.log('Si llegue')       
+  //    })              
+  // }
+  // let firstDocument = null;
+  // const PrevPage = () => {
+  //   // console.log('Siguiente pag.')
+  //    const query = candidatesRef
+  //                   .orderBy('state')
+  //                   .endBefore( firstDocument )
+  //    query.limit(10).get().then(snap => {
+  //          firstDocument = snap.docs[ 0 ] || null;
+  //          lastDocument = snap.docs[ snap.docs.length -1] || null;
+  //          TableRecluter(snap);    
+  //          console.log('Si llegue 2 ')     
+  //    })              
+  // }
+  const NextPage = () => {
+    console.log('Siguiente pag.')
+  }
+  const PrevPage = () => {
+    console.log('Anterior pag.')
+  }
 
   return (
     <div className='profile-container'>
@@ -103,7 +230,13 @@ const Recruiters = () => {
           />
           </div>          
           <div className="tableContainer">
-            <TableRecluter />
+            <TableRecluter postulants = {postulants} />
+            <div className="pagination">
+              <button className='btn-page' onClick={PrevPage}>Página anterior</button>
+              <button className='btn-page' onClick={NextPage}>Siguiente página</button>
+              {/* <button className='btn-page' onClick={getPrev} disabled={isStart}>Página anterior</button>
+              <button className='btn-page' onClick={getNext} disabled={isEnd}>Siguiente página</button> */}
+            </div>
           </div>
         </div>
        <SmallFooter />   
