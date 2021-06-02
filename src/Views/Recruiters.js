@@ -23,6 +23,7 @@ const candidatesRef = db.collection('candidates');
   const [recruiter, setRecruiter] = useState({})
   const [value, setValue] = useState();
   const [postulants, setPostulants] = useState([]); //MIRI
+  const [smallData, setSmallData] =useState()
 
   const datas = () => {candidatesRef.onSnapshot((querySnapshot)=> {//MIRI
     const docs = [];
@@ -30,9 +31,37 @@ const candidatesRef = db.collection('candidates');
        docs.push({ ...doc.data() });
     })
     setPostulants(docs);
+    getItems(docs);
     console.log(docs, 'datos');
   })
 }
+
+const getItems= (docs)=>{
+  console.log('postulansDaa',docs)
+  const query = candidatesRef
+                    .orderBy('state')
+     query.limit(10).get().then(snap => {
+           firstDocument = snap.docs[ 0 ] || null;
+           console.log(firstDocument, 'hoooolllaaaa')
+          setSmallData(firstDocument)
+    })
+  }
+
+
+
+// let lastDocument = null;
+//   const NextPage = () => {
+//     // console.log('Siguiente pag.')
+//      const query = candidatesRef
+//                     .orderBy('state')
+//                     .startAfter( lastDocument )
+//      query.limit(10).get().then(snap => {
+//            firstDocument = snap.docs[ 0 ] || null;
+//            lastDocument = snap.docs[ snap.docs.length -1] || null;
+//            TableRecluter(snap); 
+//            console.log('Si llegue')       
+//      })              
+//   }
 
   useEffect(() =>{
     datas();
